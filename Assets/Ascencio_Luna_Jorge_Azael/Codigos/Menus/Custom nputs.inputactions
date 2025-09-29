@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "Custom nputs",
+    "maps": [
+        {
+            "name": "Menu",
+            "id": "79fbc444-a577-4460-886d-620c152571d5",
+            "actions": [
+                {
+                    "name": "MenuPressed",
+                    "type": "Button",
+                    "id": "71950433-2fc2-44bb-bb97-225c6492d17b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7268cb4a-59b6-4a0e-882b-e87b220a47d6",
+                    "path": "<OculusTouchController>/menu",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MenuPressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

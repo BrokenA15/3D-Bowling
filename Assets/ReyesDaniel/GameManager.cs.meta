@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 272d850216503da49a93f3ef83a01355
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pinPrefab: {fileID: 66046087115340967, guid: 4b5f6b1413baf194bbabda085d23cf48, type: 3}
+  - bowlingBall: {fileID: -8678540431094947258, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
+  - ballResetPoint: {fileID: 4806264201316933129, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
