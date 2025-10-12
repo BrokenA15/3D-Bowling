@@ -819,40 +819,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1548320768123690951, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
   m_PrefabInstance: {fileID: 1870679753}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &441359579
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441359578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b811fbaca799dd47889ddc344b4b41e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 0.1085
-  mass: 7
-  muK: 0.05
-  rollingResistance: 0.02
-  slipThreshold: 0.02
---- !u!114 &441359580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 441359578}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 176e73f91291cb84d89e4b6d39751b20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialSpeed: 15
-  sideForce: 5
-  spinTorque: 10
-  frictionForce: 2
-  minVelocityThreshold: 0.1
 --- !u!135 &441359581
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1159,6 +1125,8 @@ MonoBehaviour:
   spinTorque: 10
   frictionForce: 2
   minVelocityThreshold: 0.1
+  rb: {fileID: 0}
+  hasBeenLaunched: 0
 --- !u!54 &510323205
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4474,12 +4442,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1548320768123690951, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 441359581}
-    - targetCorrespondingSourceObject: {fileID: 1548320768123690951, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 441359580}
-    - targetCorrespondingSourceObject: {fileID: 1548320768123690951, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 441359579}
   m_SourcePrefab: {fileID: 100100000, guid: e4566ddf9f4ff0844a8dd88522d3d7e6, type: 3}
 --- !u!1 &1926259104
 GameObject:
