@@ -3,7 +3,7 @@ using UnityEngine;
 public class PinFallSound : MonoBehaviour
 {
     [Tooltip("Altura mínima o umbral para considerar que el pino está caído")]
-    public float fallYThreshold = 0.1f;
+    public float fallYThreshold = 0f;
 
     [Tooltip("Ángulo máximo de inclinación para considerar que sigue de pie")]
     public float uprightAngleThreshold = 15f;
