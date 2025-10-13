@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class PinFallSound : MonoBehaviour
 {
-<<<<<<< Updated upstream
+
     [Tooltip("Altura mínima o umbral para considerar que el pino está caído")]
     public float fallYThreshold = 0f;
-=======
+
     [Tooltip("Rotación inicial del prefab (usualmente -90 en X)")]
     public Vector3 initialRotation = new Vector3(-90f, 0f, 0f);
->>>>>>> Stashed changes
 
     [Tooltip("Diferencia de ángulo para considerar que cayó (grados)")]
     public float rotationChangeThreshold = 30f;
