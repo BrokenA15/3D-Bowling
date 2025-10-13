@@ -152,6 +152,33 @@ public class BowlingGameManagerNoVR : MonoBehaviour
 
         currentPins = standingPins;
 
+        // 🟢 --- LÓGICA DE CHUZA ---
+        bool isStrike = (currentPins.Count == 0 && turn == 1);
+        if (isStrike)
+        {
+            uiManager.UpdateState("¡Chuza!");
+            round++;
+            turn = 1;
+            SetupPins();
+
+            if (round > maxRounds)
+            {
+                uiManager.UpdateState("🎉 Juego terminado");
+                round = 1;
+                SetupPins();
+            }
+
+            uiManager.UpdateTurn(turn);
+            uiManager.UpdateRound(round);
+
+            yield return new WaitForSeconds(2f);
+            ResetBallPosition();
+            EnterTurnPreparation();
+            yield break; // ← terminamos aquí para no continuar
+        }
+        // 🟢 ------------------------
+
+        // Si NO hubo chuza:
         if (currentPins.Count == 0)
         {
             turn = 1;
@@ -183,6 +210,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         ResetBallPosition();
         EnterTurnPreparation();
     }
+
 
     IEnumerator SnapPinToPosition(GameObject pin, Vector3 targetPos, Quaternion targetRot)
     {

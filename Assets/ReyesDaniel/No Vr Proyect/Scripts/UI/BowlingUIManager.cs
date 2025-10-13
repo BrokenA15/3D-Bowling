@@ -45,13 +45,13 @@ public class BowlingUIManager : MonoBehaviour
     public void UpdateTurn(int turn)
     {
         if (turnText != null)
-            turnText.text = $"Turno {turn}";
+            turnText.text = $"Turno: {turn}";
     }
 
     public void UpdateRound(int round)
     {
         if (roundText != null)
-            roundText.text = $"Ronda {round}";
+            roundText.text = $"Ronda: {round}";
     }
 
     public void UpdateState(string msg)
