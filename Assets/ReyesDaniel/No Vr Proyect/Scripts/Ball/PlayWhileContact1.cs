@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayWhileContact : MonoBehaviour
+public class PlayWhileContact1 : MonoBehaviour
 {
     [Tooltip("Tag a detectar (por defecto: Bola)")]
     public string targetTag = "Bola";

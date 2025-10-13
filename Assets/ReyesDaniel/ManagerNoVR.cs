@@ -30,6 +30,11 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     public float pinCheckDelay = 0.5f;
     public float snapDuration = 0.3f;
 
+    [Header("UI")]
+    public BowlingUIManager uiManager;
+
+    private int round = 1;
+    private const int maxRounds = 10;
     private int turn = 1;
     private float stillTimer = 0f;
     private TurnState currentState = TurnState.TurnPreparation;
@@ -38,6 +43,8 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     {
         if (ballController == null)
             ballController = FindFirstObjectByType<BallControllerNoVR>();
+        if (uiManager == null)
+            uiManager = FindFirstObjectByType<BowlingUIManager>();
 
         SetupPins();
         ResetBallPosition();
@@ -49,7 +56,10 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         if (currentState == TurnState.TurnPreparation)
         {
             if (ballController.IsHolding())
+            {
                 currentState = TurnState.WaitingThrow;
+                uiManager.UpdateState("Carga y lanza la bola");
+            }
         }
         else if (currentState == TurnState.WaitingThrow)
         {
@@ -71,6 +81,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             {
                 currentState = TurnState.BallThrown;
                 stillTimer = 0f;
+                uiManager.UpdateState("Bola lanzada... esperando a que se detenga");
             }
         }
     }
@@ -114,6 +125,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
 
     IEnumerator ProcessPins()
     {
+        uiManager.UpdateState("Evaluando pinos...");
         yield return new WaitForSeconds(pinCheckDelay);
 
         List<GameObject> standingPins = new List<GameObject>();
@@ -143,6 +155,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         if (currentPins.Count == 0)
         {
             turn = 1;
+            round++;
             SetupPins();
         }
         else if (turn == 1)
@@ -152,9 +165,21 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         else
         {
             turn = 1;
+            round++;
             SetupPins();
         }
 
+        if (round > maxRounds)
+        {
+            uiManager.UpdateState("🎉 Juego terminado");
+            round = 1;
+            SetupPins();
+        }
+
+        uiManager.UpdateTurn(turn);
+        uiManager.UpdateRound(round);
+
+        yield return new WaitForSeconds(2f);
         ResetBallPosition();
         EnterTurnPreparation();
     }
@@ -187,12 +212,13 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     void ResetBallPosition()
     {
         if (ballController == null) return;
-        ballController.ResetBall(new Vector3(258.529999f, 9.72999954f, -453.140015f));
+        ballController.ResetBall(new Vector3(275.950012f, 16.2299995f, -450.309998f));
     }
 
     void EnterTurnPreparation()
     {
         currentState = TurnState.TurnPreparation;
-        Debug.Log("🟢 Turno listo, espera a que el jugador tome la bola.");
+        uiManager.UpdateState("Toma la bola para iniciar tu turno");
     }
 }
+

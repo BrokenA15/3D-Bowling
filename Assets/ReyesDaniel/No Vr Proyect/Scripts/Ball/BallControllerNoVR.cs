@@ -24,6 +24,14 @@ public class BallControllerNoVR : MonoBehaviour
     private int originalLayer;
     private int ignorePlayerLayer;
 
+    private BowlingUIManager uiManager;
+
+    void Start()
+    {
+        uiManager = FindFirstObjectByType<BowlingUIManager>();
+    }
+
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -66,9 +74,13 @@ public class BallControllerNoVR : MonoBehaviour
             {
                 chargeTime += Time.deltaTime;
                 chargeTime = Mathf.Clamp(chargeTime, 0f, maxChargeTime);
+
+                if (uiManager != null)
+                    uiManager.UpdateForceBar(chargeTime, maxChargeTime);
             }
         }
     }
+
 
     void TryPickUpBall()
     {
@@ -116,6 +128,9 @@ public class BallControllerNoVR : MonoBehaviour
         Vector3 throwDirection = mainCam.transform.forward;
         float finalForce = throwForce * (chargeTime / maxChargeTime);
         rb.AddForce(throwDirection * finalForce, ForceMode.VelocityChange);
+        if (uiManager != null)
+            uiManager.ResetForceBar();
+
 
         RestoreCollision();
         chargeTime = 0f;
