@@ -2,17 +2,27 @@ using UnityEngine;
 
 public class PinFallSound : MonoBehaviour
 {
+<<<<<<< Updated upstream
     [Tooltip("Altura mínima o umbral para considerar que el pino está caído")]
     public float fallYThreshold = 0f;
+=======
+    [Tooltip("Rotación inicial del prefab (usualmente -90 en X)")]
+    public Vector3 initialRotation = new Vector3(-90f, 0f, 0f);
+>>>>>>> Stashed changes
 
-    [Tooltip("Ángulo máximo de inclinación para considerar que sigue de pie")]
-    public float uprightAngleThreshold = 15f;
+    [Tooltip("Diferencia de ángulo para considerar que cayó (grados)")]
+    public float rotationChangeThreshold = 30f;
+
+    [Tooltip("Distancia mínima de movimiento en Y o Z para considerar que cayó")]
+    public float movementThreshold = 0.1f;
 
     [Tooltip("Clip de sonido al caer")]
     public AudioClip fallSound;
 
     private AudioSource audioSource;
     private bool hasPlayed = false;
+
+    private Vector3 initialPosition;
 
     void Start()
     {
@@ -21,35 +31,32 @@ public class PinFallSound : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
 
         audioSource.playOnAwake = false;
+
+        // Guardamos la rotación y posición iniciales
+        initialRotation = transform.eulerAngles;
+        initialPosition = transform.position;
     }
 
     void Update()
     {
-        // Verificar si el pino está caído
-        bool isFallen = false;
+        // Calcular cambio de rotación respecto a la inicial
+        float rotationDifference = Quaternion.Angle(Quaternion.Euler(initialRotation), transform.rotation);
 
-        // Opción 1: Detectar por altura (posición Y)
-        if (transform.position.y <= fallYThreshold)
-        {
-            isFallen = true;
-        }
+        // Calcular movimiento en Y o Z
+        float movement = Mathf.Abs(transform.position.y - initialPosition.y) +
+                         Mathf.Abs(transform.position.z - initialPosition.z);
 
-        // Opción 2: Detectar por inclinación
-        float tiltAngle = Vector3.Angle(transform.up, Vector3.up);
-        if (tiltAngle > uprightAngleThreshold)
-        {
-            isFallen = true;
-        }
+        bool hasFallen = (rotationDifference > rotationChangeThreshold) || (movement > movementThreshold);
 
-        // Si está caído y aún no ha sonado, reproducir sonido
-        if (isFallen && !hasPlayed && fallSound != null)
+        // Si cayó y aún no ha sonado
+        if (hasFallen && !hasPlayed && fallSound != null)
         {
             audioSource.PlayOneShot(fallSound);
             hasPlayed = true;
         }
 
-        // Si se levanta de nuevo (opcional: reiniciar el estado)
-        if (!isFallen && hasPlayed)
+        // Si vuelve a su posición original (opcional, reiniciar)
+        if (!hasFallen && hasPlayed)
         {
             hasPlayed = false;
         }

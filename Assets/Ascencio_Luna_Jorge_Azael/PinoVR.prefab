@@ -10,31 +10,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 160
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 160
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalScale.z
-      value: 160
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.03
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -466.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071067
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -46,11 +46,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -66,16 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: d481939271d0a27409a54a0646812dd7, type: 2}
     - target: {fileID: 919132149155446097, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       propertyPath: m_Name
-      value: PrefabPino
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
-<<<<<<< Updated upstream
-      propertyPath: m_Layer
-      value: 11
-=======
-      propertyPath: m_IsActive
-      value: 1
->>>>>>> Stashed changes
+      value: PinoVR
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -90,6 +81,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4945772808199976675}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1690960253641887151}
   m_SourcePrefab: {fileID: 100100000, guid: 39e4e130e03d37944b1a471b160d07e5, type: 3}
 --- !u!1 &3970995216838409165 stripped
 GameObject:
@@ -111,7 +105,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -167,3 +161,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1690960253641887151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3970995216838409165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 090f82bba5c082c4d99196388a2b1c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PinFallSound
+  initialRotation: {x: -90, y: 0, z: 0}
+  rotationChangeThreshold: 30
+  movementThreshold: 0.1
+  fallSound: {fileID: 8300000, guid: 7a60fc30b52ffc348b82721c7caa4d69, type: 3}
