@@ -168,11 +168,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3970995216838409165}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 090f82bba5c082c4d99196388a2b1c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PinFallSound
+  fallYThreshold: 0
   initialRotation: {x: -90, y: 0, z: 0}
   rotationChangeThreshold: 30
   movementThreshold: 0.1
