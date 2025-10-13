@@ -9,6 +9,8 @@ public class BallControllerNoVR : MonoBehaviour
     public float pickUpDistance = 3f;
     public float throwForce = 10f;
     public float maxChargeTime = 2f;
+    private int totalPinsScore = 0;  
+    private int pinTurnScore = 0;
 
     private Rigidbody rb;
     private Collider col;

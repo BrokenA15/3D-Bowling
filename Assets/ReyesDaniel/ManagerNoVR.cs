@@ -16,6 +16,10 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     public GameObject pinPrefab;
     public Transform[] pinSpawnPoints;
     public List<GameObject> currentPins = new List<GameObject>();
+    private int totalPinsScore = 0;
+    private int pinTurnScore = 0;
+    private int pinosEnPieAnterior = 10;
+
 
     private List<Vector3> initialPinPositions = new List<Vector3>();
     private List<Quaternion> initialPinRotations = new List<Quaternion>();
@@ -41,12 +45,15 @@ public class BowlingGameManagerNoVR : MonoBehaviour
 
     void Start()
     {
+
         if (ballController == null)
             ballController = FindFirstObjectByType<BallControllerNoVR>();
         if (uiManager == null)
             uiManager = FindFirstObjectByType<BowlingUIManager>();
 
         SetupPins();
+        pinosEnPieAnterior = 10;
+
         ResetBallPosition();
         EnterTurnPreparation();
     }
@@ -58,7 +65,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             if (ballController.IsHolding())
             {
                 currentState = TurnState.WaitingThrow;
-                uiManager.UpdateState("Carga y lanza la bola");
+                uiManager.UpdateState("Throw the ball");
             }
         }
         else if (currentState == TurnState.WaitingThrow)
@@ -81,7 +88,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             {
                 currentState = TurnState.BallThrown;
                 stillTimer = 0f;
-                uiManager.UpdateState("Bola lanzada... esperando a que se detenga");
+                uiManager.UpdateState("Waiting for the ball to come back");
             }
         }
     }
@@ -125,13 +132,14 @@ public class BowlingGameManagerNoVR : MonoBehaviour
 
     IEnumerator ProcessPins()
     {
-        uiManager.UpdateState("Evaluando pinos...");
+        uiManager.UpdateState("Checking pins");
         yield return new WaitForSeconds(pinCheckDelay);
 
         List<GameObject> standingPins = new List<GameObject>();
 
         for (int i = 0; i < currentPins.Count; i++)
         {
+            
             GameObject pin = currentPins[i];
             if (pin == null) continue;
 
@@ -151,21 +159,32 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         }
 
         currentPins = standingPins;
+        int pinosCaidosEsteTurno = pinosEnPieAnterior - currentPins.Count;
+        if (pinosCaidosEsteTurno < 0) pinosCaidosEsteTurno = 0; // Seguridad
 
-        // 🟢 --- LÓGICA DE CHUZA ---
+        totalPinsScore += pinosCaidosEsteTurno;
+        pinosEnPieAnterior = currentPins.Count;
+        uiManager.UpdatePins( totalPinsScore);
+
+        //  --- LÓGICA DE CHUZA ---
         bool isStrike = (currentPins.Count == 0 && turn == 1);
         if (isStrike)
         {
-            uiManager.UpdateState("¡Chuza!");
+            uiManager.UpdateState("¡Strike!");
             round++;
             turn = 1;
+
             SetupPins();
+            pinosEnPieAnterior = 10;
+
 
             if (round > maxRounds)
             {
-                uiManager.UpdateState("🎉 Juego terminado");
+                uiManager.UpdateState("🎉 Game ending");
                 round = 1;
                 SetupPins();
+                pinosEnPieAnterior = 10;
+
             }
 
             uiManager.UpdateTurn(turn);
@@ -184,6 +203,8 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             turn = 1;
             round++;
             SetupPins();
+            pinosEnPieAnterior = 10;
+
         }
         else if (turn == 1)
         {
@@ -194,13 +215,18 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             turn = 1;
             round++;
             SetupPins();
+            pinosEnPieAnterior = 10;
+
         }
 
         if (round > maxRounds)
         {
-            uiManager.UpdateState("🎉 Juego terminado");
+            uiManager.UpdateState("🎉 Game ending");
             round = 1;
             SetupPins();
+            pinosEnPieAnterior = 10;
+
+
         }
 
         uiManager.UpdateTurn(turn);
@@ -246,7 +272,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     void EnterTurnPreparation()
     {
         currentState = TurnState.TurnPreparation;
-        uiManager.UpdateState("Toma la bola para iniciar tu turno");
+        uiManager.UpdateState("Grab the ball to start your turn");
     }
 }
 

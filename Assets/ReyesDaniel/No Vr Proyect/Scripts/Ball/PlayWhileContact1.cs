@@ -17,7 +17,6 @@ public class PlayWhileContact1 : MonoBehaviour
             audioSource = gameObject.AddComponent<AudioSource>();
 
         audioSource.playOnAwake = false;
-        audioSource.loop = true; // importante para que suene mientras esté en contacto
     }
 
     // ------- Trigger 3D -------
@@ -30,29 +29,6 @@ public class PlayWhileContact1 : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(targetTag))
-        {
-            audioSource.Stop();
-        }
-    }
 
-    // ------- Trigger 2D -------
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag(targetTag) && clip != null)
-        {
-            audioSource.clip = clip;
-            audioSource.Play();
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag(targetTag))
-        {
-            audioSource.Stop();
-        }
-    }
+ 
 }

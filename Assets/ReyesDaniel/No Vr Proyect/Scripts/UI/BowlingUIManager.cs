@@ -7,6 +7,7 @@ public class BowlingUIManager : MonoBehaviour
     [Header("Texto de estado")]
     public TextMeshProUGUI turnText;
     public TextMeshProUGUI roundText;
+    public TextMeshProUGUI pinText;
     public TextMeshProUGUI stateText;
 
     [Header("Barra de fuerza")]
@@ -21,7 +22,7 @@ public class BowlingUIManager : MonoBehaviour
         ResetForceBar();
         UpdateTurn(1);
         UpdateRound(1);
-        UpdateState("Toma la bola para iniciar tu turno");
+        UpdateState("Grab the ball to start");
     }
 
     public void UpdateForceBar(float charge, float maxCharge)
@@ -42,16 +43,21 @@ public class BowlingUIManager : MonoBehaviour
         }
     }
 
+    public void UpdatePins(int pin)
+    {
+        pinText.text = $"Pin score: {pin} ";
+    }
+
     public void UpdateTurn(int turn)
     {
         if (turnText != null)
-            turnText.text = $"Turno: {turn}";
+            turnText.text = $"Turn: {turn}";
     }
 
     public void UpdateRound(int round)
     {
         if (roundText != null)
-            roundText.text = $"Ronda: {round}";
+            roundText.text = $"Round: {round} / 10";
     }
 
     public void UpdateState(string msg)
