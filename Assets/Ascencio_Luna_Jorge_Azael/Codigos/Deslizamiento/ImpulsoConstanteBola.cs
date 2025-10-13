@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ImpulsoConstanteBola : MonoBehaviour
 {
-    [Tooltip("Tag del objeto que se impulsará")]
+    [Tooltip("Tag del objeto que se impulsarï¿½")]
     public string targetTag = "Bola";
 
-    [Tooltip("Fuerza de impulso constante hacia adelante (eje Z del trigger)")]
+    [Tooltip("Fuerza de impulso constante (intensidad)")]
     public float fuerzaImpulso = 10f;
 
     private void OnTriggerStay(Collider other)
@@ -17,13 +17,24 @@ public class ImpulsoConstanteBola : MonoBehaviour
 
             if (rb != null)
             {
-                // Dirección hacia adelante del trigger, sin componente vertical
-                Vector3 direccion = transform.right;
-                direccion.y = 0f; // evitar empuje hacia arriba o abajo
-                direccion.Normalize();
+                // Solo aplicar impulso si la bola tiene algo de movimiento
+                if (rb.linearVelocity.magnitude > 0.1f)
+                {
+                    // Tomar la direcciï¿½n actual del movimiento (normalizada)
+                    Vector3 direccionMovimiento = rb.linearVelocity.normalized;
 
-                // Aplicar fuerza continua mientras la bola esté en contacto
-                rb.AddForce((direccion * -1f) * fuerzaImpulso * Time.deltaTime, ForceMode.VelocityChange);
+                    // Aplicar fuerza en la misma direcciï¿½n de su movimiento actual
+                    rb.AddForce(direccionMovimiento * fuerzaImpulso * Time.deltaTime, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    // Si la bola estï¿½ casi detenida, usar la direcciï¿½n del trigger como referencia
+                    Vector3 direccion = transform.forward; // o transform.right, segï¿½n tu escena
+                    direccion.y = 0f;
+                    direccion.Normalize();
+
+                    rb.AddForce(direccion * fuerzaImpulso * Time.deltaTime, ForceMode.VelocityChange);
+                }
             }
         }
     }

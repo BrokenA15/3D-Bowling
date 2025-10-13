@@ -175,6 +175,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PinFallSound
   fallYThreshold: 0
   initialRotation: {x: -90, y: 0, z: 0}
-  rotationChangeThreshold: 30
-  movementThreshold: 0.1
+  uprightAngleThreshold: 15
   fallSound: {fileID: 8300000, guid: 7a60fc30b52ffc348b82721c7caa4d69, type: 3}

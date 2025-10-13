@@ -6,9 +6,10 @@ public class BowlingGameManager : MonoBehaviour
 {
     public enum TurnState
     {
-        WaitingThrow,   // Esperando a que el jugador lance la bola
-        BallThrown,     // La bola ya fue lanzada y está en movimiento
-        ProcessingPins  // La bola se detuvo, procesando pinos
+        TurnPreparation,
+        WaitingThrow,
+        BallThrown,
+        ProcessingPins
     }
 
     [Header("Pinos")]
@@ -16,32 +17,47 @@ public class BowlingGameManager : MonoBehaviour
     public Transform[] pinSpawnPoints;
     public List<GameObject> currentPins = new List<GameObject>();
 
-    [Header("Bola")]
+    private List<Vector3> initialPinPositions = new List<Vector3>();
+    private List<Quaternion> initialPinRotations = new List<Quaternion>();
+
+    [Header("Bola (VR)")]
     public Rigidbody bowlingBallRB;
-    public float stopThreshold = 0.1f;
-    public float stopTimeRequired = 2f;
+    public float stopThreshold = 0.5f;
+    public float stopTimeRequired = 5f;
 
     [Header("Pinos caídos")]
-    public float fallenPinDestroyDelay = 0.3f;
+    public float fallenPinDisableDelay = 0.3f;
     public float pinCheckDelay = 0.5f;
+    public float snapDuration = 0.3f;
+
+    [Header("Tiempos")]
+    public float pinRespawnDelay = 2f; // 🕒 Tiempo antes de volver a generar los pinos
 
     private int turn = 1;
     private float stillTimer = 0f;
-    private TurnState currentState = TurnState.WaitingThrow;
+    private TurnState currentState = TurnState.TurnPreparation;
 
     void Start()
     {
         if (bowlingBallRB == null)
-            bowlingBallRB = Object.FindFirstObjectByType<Rigidbody>();
+            bowlingBallRB = FindFirstObjectByType<Rigidbody>();
 
-        SetupPins();
+        StartCoroutine(SetupPinsWithDelay(0f)); // genera al inicio sin delay
         ResetBallPosition();
-        currentState = TurnState.WaitingThrow;
+        EnterTurnPreparation();
     }
 
     void Update()
     {
-        DetectBallThrow();
+        if (currentState == TurnState.TurnPreparation)
+        {
+            if (bowlingBallRB.linearVelocity.magnitude > 0.05f)
+                currentState = TurnState.WaitingThrow;
+        }
+        else if (currentState == TurnState.WaitingThrow)
+        {
+            DetectBallThrow();
+        }
     }
 
     void FixedUpdate()
@@ -58,6 +74,7 @@ public class BowlingGameManager : MonoBehaviour
             {
                 currentState = TurnState.BallThrown;
                 stillTimer = 0f;
+                Debug.Log("🎳 Bola lanzada");
             }
         }
     }
@@ -82,18 +99,33 @@ public class BowlingGameManager : MonoBehaviour
 
     public void SetupPins()
     {
-        // Limpiar pinos existentes
+        // 🔄 Limpia pinos anteriores
         foreach (GameObject pin in currentPins)
+        {
             if (pin != null)
                 Destroy(pin);
+        }
 
         currentPins.Clear();
+        initialPinPositions.Clear();
+        initialPinRotations.Clear();
 
+        // 🔹 Instancia nuevos pinos
         foreach (Transform spawn in pinSpawnPoints)
         {
             GameObject pin = Instantiate(pinPrefab, spawn.position, spawn.rotation);
             currentPins.Add(pin);
+            initialPinPositions.Add(spawn.position);
+            initialPinRotations.Add(spawn.rotation);
         }
+
+        Debug.Log("🆕 Pinos listos");
+    }
+
+    IEnumerator SetupPinsWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SetupPins();
     }
 
     IEnumerator ProcessPins()
@@ -102,45 +134,100 @@ public class BowlingGameManager : MonoBehaviour
 
         List<GameObject> standingPins = new List<GameObject>();
 
-        foreach (GameObject pin in currentPins)
+        for (int i = 0; i < currentPins.Count; i++)
         {
+            GameObject pin = currentPins[i];
             if (pin == null) continue;
 
-            float angle = Vector3.Angle(pin.transform.up, Vector3.up);
+            Quaternion currentRot = pin.transform.rotation;
+            Quaternion initialRot = initialPinRotations[i];
+            float angle = Quaternion.Angle(currentRot, initialRot);
 
-            if (angle < 60f) // de pie
+            if (angle < 30f) // sigue de pie
             {
                 standingPins.Add(pin);
+                StartCoroutine(SnapPinToPosition(pin, initialPinPositions[i], initialPinRotations[i]));
             }
             else
             {
-                Destroy(pin, fallenPinDestroyDelay);
+                StartCoroutine(DisablePin(pin, fallenPinDisableDelay));
             }
         }
 
         currentPins = standingPins;
 
-        // Lógica de turnos
-        if (currentPins.Count == 0)
+        // 🟡 --- Lógica de turnos y chuza ---
+        if (turn == 1)
         {
-            turn = 1;
-            SetupPins();
-            ResetBallPosition();
-        }
-        else if (turn == 1)
-        {
-            turn = 2;
-            ResetBallPosition();
+            if (currentPins.Count == 0)
+            {
+                // 🎯 Chuza: reinicia después del delay
+                Debug.Log("💥 CHUZA en el primer tiro! Se reinician los pinos tras un breve intervalo.");
+                turn = 1;
+                StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
+            }
+            else
+            {
+                turn = 2;
+                Debug.Log("➡️ Segundo tiro, quedan " + currentPins.Count + " pinos.");
+            }
         }
         else
         {
+            Debug.Log("🔁 Fin del turno, reiniciando todos los pinos.");
             turn = 1;
-            SetupPins();
-            ResetBallPosition();
+            StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
         }
 
-        // Volvemos a esperar un lanzamiento
-        currentState = TurnState.WaitingThrow;
+        ResetBallPosition();
+        EnterTurnPreparation();
+    }
+
+    IEnumerator DisablePin(GameObject pin, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (pin != null)
+        {
+            pin.SetActive(false);
+            Debug.Log("❌ Pino desactivado");
+        }
+    }
+
+    IEnumerator SnapPinToPosition(GameObject pin, Vector3 targetPos, Quaternion targetRot)
+    {
+        if (pin == null || !pin.activeInHierarchy)
+            yield break;
+
+        Rigidbody rb = pin.GetComponent<Rigidbody>();
+        if (rb == null)
+            yield break;
+
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        rb.isKinematic = true;
+
+        Vector3 startPos = pin.transform.position;
+        Quaternion startRot = pin.transform.rotation;
+        float elapsed = 0f;
+
+        while (elapsed < snapDuration)
+        {
+            if (pin == null || !pin.activeInHierarchy)
+                yield break;
+
+            float t = elapsed / snapDuration;
+            pin.transform.position = Vector3.Lerp(startPos, targetPos, t);
+            pin.transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        if (pin != null && pin.activeInHierarchy)
+        {
+            pin.transform.position = targetPos;
+            pin.transform.rotation = targetRot;
+            rb.isKinematic = false;
+        }
     }
 
     void ResetBallPosition()
@@ -149,7 +236,13 @@ public class BowlingGameManager : MonoBehaviour
 
         bowlingBallRB.linearVelocity = Vector3.zero;
         bowlingBallRB.angularVelocity = Vector3.zero;
-        bowlingBallRB.transform.position = new Vector3(2.30749917f, 0.451000005f, 1.50999999f);
+        bowlingBallRB.transform.position = new Vector3(11.7180004f, 0.768000007f, -19.4759998f);
         bowlingBallRB.transform.rotation = Quaternion.identity;
+    }
+
+    void EnterTurnPreparation()
+    {
+        currentState = TurnState.TurnPreparation;
+        Debug.Log("🟢 Turno listo, espera a que el jugador tome la bola (VR).");
     }
 }
