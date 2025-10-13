@@ -221,4 +221,4 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         uiManager.UpdateState("Toma la bola para iniciar tu turno");
     }
 }
-
+
