@@ -16,6 +16,9 @@ public class BowlingGameManager : MonoBehaviour
     public GameObject pinPrefab;
     public Transform[] pinSpawnPoints;
     public List<GameObject> currentPins = new List<GameObject>();
+    private int totalPinosCaidos = 0;       // Total acumulado entre rondas
+    private int pinosEnPieAnterior = 10;    // Cuántos pinos había antes del tiro
+    private int pinosCaidosEsteTurno = 0;   // Pinos derribados en este tiro
 
     private List<Vector3> initialPinPositions = new List<Vector3>();
     private List<Quaternion> initialPinRotations = new List<Quaternion>();
@@ -24,6 +27,7 @@ public class BowlingGameManager : MonoBehaviour
     public Rigidbody bowlingBallRB;
     public float stopThreshold = 0.5f;
     public float stopTimeRequired = 5f;
+    public BowlingVRUIManagerw ActPin;
 
     [Header("Pinos caídos")]
     public float fallenPinDisableDelay = 0.3f;
@@ -74,7 +78,6 @@ public class BowlingGameManager : MonoBehaviour
             {
                 currentState = TurnState.BallThrown;
                 stillTimer = 0f;
-                Debug.Log("🎳 Bola lanzada");
             }
         }
     }
@@ -155,30 +158,46 @@ public class BowlingGameManager : MonoBehaviour
         }
 
         currentPins = standingPins;
+        pinosCaidosEsteTurno = pinosEnPieAnterior - currentPins.Count;
+        if (pinosCaidosEsteTurno < 0) pinosCaidosEsteTurno = 0;
+
+        // 🟢 Sumar al total general
+        totalPinosCaidos += pinosCaidosEsteTurno;
+
+
+        // 📊 Mostrar información en consola
+        Debug.Log($"🎳 Turno {turn}: Caídos = {pinosCaidosEsteTurno}, Total = {totalPinosCaidos}");
+        ActPin.UpdatePins(totalPinosCaidos);
 
         // 🟡 --- Lógica de turnos y chuza ---
         if (turn == 1)
         {
             if (currentPins.Count == 0)
             {
-                // 🎯 Chuza: reinicia después del delay
-                Debug.Log("💥 CHUZA en el primer tiro! Se reinician los pinos tras un breve intervalo.");
+                // 🎯 CHUZA
+                Debug.Log("💥 CHUZA en el primer tiro! Reiniciando pinos.");
                 turn = 1;
+                pinosEnPieAnterior = 10; // reinicia los pinos para la nueva ronda
                 StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
             }
             else
             {
+                // Pasar al segundo turno
                 turn = 2;
-                Debug.Log("➡️ Segundo tiro, quedan " + currentPins.Count + " pinos.");
+                pinosEnPieAnterior = currentPins.Count; // guarda cuántos quedaron de pie
+                Debug.Log($"➡️ Segundo tiro, quedan {pinosEnPieAnterior} pinos en pie.");
             }
         }
         else
         {
-            Debug.Log("🔁 Fin del turno, reiniciando todos los pinos.");
+            // Fin de la ronda
+            Debug.Log("🔁 Fin de la ronda, reiniciando pinos.");
             turn = 1;
+            pinosEnPieAnterior = 10; // reinicia para la siguiente ronda
             StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
         }
 
+        // Reinicia la bola y el estado del turno
         ResetBallPosition();
         EnterTurnPreparation();
     }

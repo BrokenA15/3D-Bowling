@@ -45,7 +45,7 @@ public class BowlingUIManager : MonoBehaviour
 
     public void UpdatePins(int pin)
     {
-        pinText.text = $"Pin score: {pin} ";
+        pinText.text = $"Total Pin score: {pin} ";
     }
 
     public void UpdateTurn(int turn)
