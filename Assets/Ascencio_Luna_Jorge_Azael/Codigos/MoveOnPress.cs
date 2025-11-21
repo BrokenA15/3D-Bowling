@@ -1,24 +1,28 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroupMoveOnPress : MonoBehaviour
 {
-    [Header("Objetos que se moverán")]
+    
     public List<Transform> objetosAMover = new List<Transform>();
 
-    [Header("Configuración de posiciones")]
+    [Header("ConfiguraciÃ³n de posiciones")]
     public float yBaja = -0.2f;
     public float yAlta = 0.3f;
 
     [Header("Velocidad del movimiento")]
     public float velocidad = 2f;
 
+    [Header("Tiempo mÃ­nimo entre pulsaciones (segundos)")]
+    public float tiempoEspera = 2f;
+
     private bool enPosicionAlta = false;
+    private bool puedeTogglear = true;
     private List<Vector3> posicionesObjetivo = new List<Vector3>();
 
     private void Start()
     {
-        // Guarda las posiciones iniciales y ajusta todas a yBaja
         posicionesObjetivo.Clear();
         foreach (var obj in objetosAMover)
         {
@@ -34,7 +38,6 @@ public class GroupMoveOnPress : MonoBehaviour
 
     private void Update()
     {
-        // Mueve todos los objetos suavemente a su posición objetivo
         for (int i = 0; i < objetosAMover.Count; i++)
         {
             if (objetosAMover[i] == null) continue;
@@ -47,9 +50,16 @@ public class GroupMoveOnPress : MonoBehaviour
         }
     }
 
-    // Llama a este método desde un botón o evento VR
     public void TogglePosition()
     {
+        if (!puedeTogglear) return; 
+        StartCoroutine(Barreras());
+    }
+
+    private IEnumerator Barreras()
+    {
+        puedeTogglear = false; 
+
         enPosicionAlta = !enPosicionAlta;
 
         for (int i = 0; i < objetosAMover.Count; i++)
@@ -60,5 +70,9 @@ public class GroupMoveOnPress : MonoBehaviour
             pos.y = enPosicionAlta ? yAlta : yBaja;
             posicionesObjetivo[i] = pos;
         }
+
+        
+        yield return new WaitForSeconds(tiempoEspera);
+        puedeTogglear = true;
     }
 }

@@ -54,10 +54,10 @@ Material:
     - _RotacionXY: 0.2
     - _RotacionZ: 0.01
     m_Colors:
-    - _AmbientColor: {r: 0.25, g: 0.25, b: 0.25, a: 0}
-    - _Color: {r: 0.25, g: 0.25, b: 0.25, a: 1}
-    - _Color_1: {r: 0.21568629, g: 0.21176472, b: 0.6039216, a: 1}
-    - _Color_2: {r: 0.50980395, g: 0.53333336, b: 0.67058825, a: 1}
+    - _AmbientColor: {r: 1, g: 1, b: 1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color_1: {r: 0.3607843, g: 0.7026927, b: 0.94509804, a: 1}
+    - _Color_2: {r: 0.38675806, g: 0.35248306, b: 0.8396226, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &113710921368026569
