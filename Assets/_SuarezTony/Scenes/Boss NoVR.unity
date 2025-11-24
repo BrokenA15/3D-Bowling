@@ -7195,6 +7195,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867080297}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &931256653 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5786029399729117336, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
+  m_PrefabInstance: {fileID: 1357439922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &931256654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 931256653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85da81b08dcc44944a5d34b3c14d5873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BolitaTakeDamage
+  isOnCooldown: 0
+  respawnCooldown: 5
 --- !u!1 &1082379314
 GameObject:
   m_ObjectHideFlags: 0
@@ -13284,7 +13303,7 @@ PrefabInstance:
       objectReference: {fileID: 712291183}
     - target: {fileID: 6559435381146796578, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.65
+      value: 26.28
       objectReference: {fileID: 0}
     - target: {fileID: 6559435381146796578, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -13292,7 +13311,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6559435381146796578, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -52.41
+      value: -61.22
       objectReference: {fileID: 0}
     - target: {fileID: 6559435381146796578, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13325,7 +13344,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5786029399729117336, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 931256654}
   m_SourcePrefab: {fileID: 100100000, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
 --- !u!1 &1536958954
 GameObject:
@@ -26427,7 +26449,7 @@ GameObject:
   - component: {fileID: 8039022658870042809}
   m_Layer: 11
   m_Name: BossBolo
-  m_TagString: Untagged
+  m_TagString: PinoBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26453,16 +26475,21 @@ MonoBehaviour:
     weight: 20
   rightArm: {fileID: 1777090981}
   leftArm: {fileID: 756626622}
+  bossAnimator: {fileID: 8039022658870042809}
   rightArmAnimator: {fileID: 1777090987}
   leftArmAnimator: {fileID: 756626629}
+  bossDead: Dead
   attackFistDer: AttackFistDer
   attackFistIzq: AttackFistIzq
   attackFireball: 
   fireballPrefab: {fileID: 8549306102662842249, guid: fd7a578cd393f654c9ab23939bbb7edf, type: 3}
   target: {fileID: 1536958958}
   rotationSpeed: 0.364
+  canAttack: 0
   isAttacking: 0
   attackCooldown: 5
+  maxHealth: 20
+  currentHealth: 0
 --- !u!95 &8039022658870042809
 Animator:
   serializedVersion: 7

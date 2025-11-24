@@ -14,49 +14,86 @@ public class BossLookAtPlayer : MonoBehaviour
 
     [Header("Arms")] 
     public GameObject rightArm;
-    public GameObject leftArm;  
-    
+    public GameObject leftArm;
+
     [Header("Animations")] 
+    public Animator bossAnimator;
     public Animator rightArmAnimator;
     public Animator leftArmAnimator;
+    public string bossDead = "";
     public string attackFistDer = "";
     public string attackFistIzq = "";
     public string attackFireball = "";
     
 
-    
+    [Header("Behaviours")] 
     public GameObject fireballPrefab;
     public Transform target;
     [Range(0.1f,1f)]
     public float rotationSpeed = .5f;
-   
+
+    public bool canAttack = true;
     public bool isAttacking ;
+    [SerializeField]
+    private float attackCooldown;
+    private float timer;
+       
+       
+    [Header("Health")] 
+    public int maxHealth = 100;
+    [SerializeField]
+    private int currentHealth;
+    
 
-   private void Start()
-   {
-       rightArmAnimator.SetBool(attackFistDer,false);
-   }
+
+  
    
-   [SerializeField]
-   private float attackCooldown;
-   private float timer;
+   
+    private void Start()
+   {
+       bossAnimator.SetBool(bossDead, false);
+       canAttack = true;
+       currentHealth = maxHealth;
+   }
+    
+    public void TakeDamage(int amount)
+    {
+        currentHealth -= amount;
+        Debug.Log("Boss recibió daño. Vida restante: " + currentHealth);
 
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+    
    void Update()
    {
-       if (!isAttacking)
+       if (canAttack)
        {
-           timer += Time.deltaTime;
-           if (timer >= attackCooldown)
+           if (!isAttacking)
            {
-               ChooseAttack();
-               timer = 0;
+               timer += Time.deltaTime;
+               if (timer >= attackCooldown)
+               {
+                   ChooseAttack(); 
+                   timer = 0;
+               }
            }
        }
+       
 
        if (target != null)
            RotateTowardsTarget();
    }
 
+   private void Die()
+   {
+       Debug.Log("Boss derrotado");
+       canAttack = false;
+       bossAnimator.SetBool(bossDead, true);
+   }
+   
     private void RotateTowardsTarget()
     {
         Vector3 direction = target.position - transform.position;
@@ -132,8 +169,8 @@ public class BossLookAtPlayer : MonoBehaviour
 
         return attacks[0].name; 
     }
-    
-    public void ChooseAttack()
+
+    private void ChooseAttack()
     {
         if (isAttacking)
             return;
