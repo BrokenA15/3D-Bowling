@@ -4244,6 +4244,7 @@ MonoBehaviour:
   yBaja: -2
   yAlta: 1
   velocidad: 3
+  tiempoEspera: 2
 --- !u!114 &1089019520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8321,7 +8322,7 @@ PrefabInstance:
     - target: {fileID: 5425966073671170381, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 62844534795ec464fbf913cdcbb6f3c4, type: 2}
+      objectReference: {fileID: 2100000, guid: e5470e9c9c57b48499762130cdd4fbe9, type: 2}
     - target: {fileID: 5786029399729117336, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
       propertyPath: m_Name
       value: BolaVolita2.0

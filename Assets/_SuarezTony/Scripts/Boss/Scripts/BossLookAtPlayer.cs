@@ -22,8 +22,7 @@ public class BossLookAtPlayer : MonoBehaviour
     public string attackFistDer = "";
     public string attackFistIzq = "";
     public string attackFireball = "";
-    public string attackCycloneFistDer = "";
-    public string attackCycloneFistIzq = "";
+    
 
     
     public GameObject fireballPrefab;

@@ -8,11 +8,12 @@ TagManager:
   - Ground
   - Bola
   - PinoBoss
+  - BrazosBoss
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - LimiteInter
   - Water
   - UI
   - Grabbing
