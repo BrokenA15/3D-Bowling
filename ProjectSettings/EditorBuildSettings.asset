@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Ascencio_Luna_Jorge_Azael/Scene/VR.unity
     guid: 41abc0573343d3a428e25672bcc3384d
   - enabled: 1
-    path: Assets/ReyesDaniel/No Vr Proyect/NoVRDaniel.unity
+    path: Assets/_ReyesDaniel/No Vr Proyect/NoVRDaniel.unity
     guid: 32c4f59a39da1734ea60a9d9e9bddfef
   - enabled: 0
     path: Assets/Ascencio_Luna_Jorge_Azael/Scene/New Scene.unity
