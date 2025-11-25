@@ -276,8 +276,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 92.625916
-  'm_MeshMetrics[1]': 37.886135
+  m_MeshMetrics[0]: 92.625916
+  m_MeshMetrics[1]: 37.886135
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -417,7 +417,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 4571727272558966267}
     m_Modifications:
     - target: {fileID: 3178190503116151320, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 867c422a0b84a5245a92271bacf63f08, type: 2}
     - target: {fileID: 3970995216838409165, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}
@@ -655,8 +655,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 14.31908
-  'm_MeshMetrics[1]': 47.59697
+  m_MeshMetrics[0]: 14.31908
+  m_MeshMetrics[1]: 47.59697
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -833,8 +833,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1.0008433
-  'm_MeshMetrics[1]': 18.044283
+  m_MeshMetrics[0]: 1.0008433
+  m_MeshMetrics[1]: 18.044283
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -1001,7 +1001,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3178190503116151320, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 867c422a0b84a5245a92271bacf63f08, type: 2}
     - target: {fileID: 3970995216838409165, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}
@@ -13809,7 +13809,7 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5425966073671170381, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e5470e9c9c57b48499762130cdd4fbe9, type: 2}
     - target: {fileID: 5786029399729117336, guid: d2929ab9f93cbbe418da6d568f552c8c, type: 3}
@@ -14089,31 +14089,31 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 062b0df0-426f-44f2-894b-30f6eaf5a2d2
-    m_ActionName: 'Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+    m_ActionName: Player/Move[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 7898766f-64cb-4f41-a623-b3641d1ea83e
-    m_ActionName: 'Player/Look[/Mouse/delta]'
+    m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: cb219238-89fb-4765-89c2-9812df632ced
-    m_ActionName: 'Player/Jump[/Keyboard/space]'
+    m_ActionName: Player/Jump[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 234c47c7-8a4b-49f4-b3bd-095306b8e440
-    m_ActionName: 'Player/Interact[/Keyboard/e]'
+    m_ActionName: Player/Interact[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 76cf097b-1182-4822-959d-7d506bc315a3
-    m_ActionName: 'Player/Throw[/Mouse/leftButton]'
+    m_ActionName: Player/Throw[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: e622bcdc-59e7-4922-8459-2394feddf5f6
-    m_ActionName: 'Player/Drop[/Keyboard/q]'
+    m_ActionName: Player/Drop[/Keyboard/q]
   - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 2b2a8078-c790-4937-a88c-61b08321b30b
-    m_ActionName: 'Player/Subir[/Keyboard/q]'
+    m_ActionName: Player/Subir[/Keyboard/q]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -27282,8 +27282,8 @@ Mesh:
   m_CookingOptions: 30
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 128.70502
-  'm_MeshMetrics[1]': 60.514057
+  m_MeshMetrics[0]: 128.70502
+  m_MeshMetrics[1]: 60.514057
   m_MeshOptimizationFlags: 1
   m_StreamData:
     serializedVersion: 2
@@ -27363,7 +27363,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3178190503116151320, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 867c422a0b84a5245a92271bacf63f08, type: 2}
     - target: {fileID: 3970995216838409165, guid: 9ec3ab144c43fcb4abae6a88b4c606a7, type: 3}

@@ -9,10 +9,13 @@ EditorBuildSettings:
     path: Assets/_SuarezTony/Scenes/VR o NoVR.unity
     guid: 695c8c27f27e44a48aae2104ea4ac7cd
   - enabled: 1
+    path: Assets/Ascencio_Luna_Jorge_Azael/Scene/MenuVR.unity
+    guid: ca93043dfcd21da4693848b5b897a0cf
+  - enabled: 1
     path: Assets/Ascencio_Luna_Jorge_Azael/Scene/VR.unity
     guid: 41abc0573343d3a428e25672bcc3384d
   - enabled: 1
-    path: Assets/ReyesDaniel/No Vr Proyect/NoVRDaniel.unity
+    path: Assets/_ReyesDaniel/No Vr Proyect/NoVRDaniel.unity
     guid: 32c4f59a39da1734ea60a9d9e9bddfef
   - enabled: 0
     path: Assets/Ascencio_Luna_Jorge_Azael/Scene/New Scene.unity
