@@ -24,19 +24,27 @@ public class BossLookAtPlayer : MonoBehaviour
     public string attackFistDer = "";
     public string attackFistIzq = "";
     public string attackFireball = "";
-    
+    public string attackDoubleFireball = "";
 
     [Header("Behaviours")] 
-    public GameObject fireballPrefab;
+   
     public Transform target;
     [Range(0.1f,1f)]
     public float rotationSpeed = .5f;
-
     public bool canAttack = true;
     public bool isAttacking ;
     [SerializeField]
     private float attackCooldown;
     private float timer;
+    [Header("Fireball Settings")]
+    public GameObject fireballPrefab;
+    public Transform launchPoint;
+    public float fireballDuration = 2f;
+    public float fireballDistanceMax = 50f;
+    public float raycastMultiplier = 1.5f;  
+    [Range(5f,20f)]
+    public float gizmoSphereRadius = 0.3f;
+    
        
        
     [Header("Health")] 
@@ -127,12 +135,48 @@ public class BossLookAtPlayer : MonoBehaviour
     public void Fireball()
     {
         isAttacking = true;
-        Instantiate(fireballPrefab);
+        bossAnimator.SetTrigger(attackFireball);
+    }
+
+    public void LaunchFireball()
+    {
+        int ignoreLayer = LayerMask.NameToLayer("LimiteInter");
+        int ignoreBoss = LayerMask.NameToLayer("Boss");
+        int mask = ~((1 << ignoreLayer) | (1 << ignoreBoss));
+        
+        Vector3 origin = launchPoint.position;
+        Vector3 direction = launchPoint.forward;
+
+
+        RaycastHit hit;
+        Vector3 targetPoint;
+        
+        float rayLength = fireballDistanceMax * raycastMultiplier;
+
+        if (Physics.Raycast(origin, direction, out hit, rayLength, mask))
+        {
+            targetPoint = hit.point;
+        }
+        else
+        {
+            targetPoint = origin + direction * fireballDistanceMax;
+        }
+
+        GameObject fb = Instantiate(fireballPrefab, origin, Quaternion.identity);
+
+        FireballMover mover = fb.GetComponent<FireballMover>();
+
+        if (mover != null)
+        {
+            mover.Init(targetPoint, fireballDuration);
+        }
+        isAttacking = false;
     }
     
     public void DoubleFireball()
     {
         isAttacking = true; 
+        bossAnimator.SetTrigger(attackDoubleFireball);
     }
 
     public void DoubleFist()
@@ -199,7 +243,41 @@ public class BossLookAtPlayer : MonoBehaviour
                 DoubleFireball();
                 break;
 
-            // puedes seguir agregando aquí...
+          
+        }
+    }
+    
+    private void OnDrawGizmos()
+    {
+        if (launchPoint == null)
+            return;
+
+        Vector3 origin = launchPoint.position;
+        Vector3 direction = launchPoint.forward;
+
+        float rayLength = fireballDistanceMax * raycastMultiplier;
+
+        int ignoreLayer = LayerMask.NameToLayer("LimiteInter");
+        int ignoreBoss = LayerMask.NameToLayer("Boss");
+
+        int mask = ~( (1 << ignoreLayer) | (1 << ignoreBoss) );
+      
+        
+        RaycastHit hit;
+        bool hitSomething = Physics.Raycast(origin, direction, out hit, rayLength, mask);
+
+        if (hitSomething)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(origin, hit.point);
+            Gizmos.DrawWireSphere(hit.point, gizmoSphereRadius);
+        }
+        else
+        {
+            Gizmos.color = Color.red;
+            Vector3 endPoint = origin + direction * rayLength;
+            Gizmos.DrawLine(origin, endPoint);
+            Gizmos.DrawWireSphere(endPoint, gizmoSphereRadius);
         }
     }
     

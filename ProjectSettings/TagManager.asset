@@ -9,6 +9,7 @@ TagManager:
   - Bola
   - PinoBoss
   - BrazosBoss
+  - Fireball
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Bola
   - Pinos
   - Pista
-  - 
+  - Boss
   - 
   - 
   - 
