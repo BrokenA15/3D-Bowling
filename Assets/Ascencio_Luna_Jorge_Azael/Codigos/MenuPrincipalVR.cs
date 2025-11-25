@@ -9,7 +9,7 @@ public class MenuPrincipalVR : MonoBehaviour
 
     public void PlayGame()
     {
-        // Carga la siguiente escena del Build
+        
         int nextScene = SceneManager.GetActiveScene().buildIndex + 1;
         SceneManager.LoadScene(nextScene);
     }
@@ -28,7 +28,7 @@ public class MenuPrincipalVR : MonoBehaviour
 
     public void ExitGame()
     {
-        // Solo funciona en build
+        
         Application.Quit();
     }
 }

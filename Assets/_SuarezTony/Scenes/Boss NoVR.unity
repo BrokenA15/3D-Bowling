@@ -27096,15 +27096,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossLookAtPlayer
   attacks:
   - name: FistDer
-    weight: 0
+    weight: 20
   - name: FistIzq
-    weight: 0
+    weight: 20
   - name: DoubleFist
     weight: 0
   - name: Fireball
     weight: 0
   - name: DoubleFireball
-    weight: 20
+    weight: 0
   rightArm: {fileID: 1777090981}
   leftArm: {fileID: 756626622}
   bossAnimator: {fileID: 8039022658870042809}
