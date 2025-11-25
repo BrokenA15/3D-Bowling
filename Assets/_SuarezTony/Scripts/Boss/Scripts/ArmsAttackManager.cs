@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArmsAttackManager : MonoBehaviour
 {
-    public BossLookAtPlayer managerBoss;
+    public BossManager managerBoss;
 
     private void FistDerActivate()
     {
