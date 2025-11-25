@@ -10,6 +10,9 @@ TagManager:
   - PinoBoss
   - BrazosBoss
   - Fireball
+  - FxTemporaire
+  - Particle
+  - RespawnBall
   layers:
   - Default
   - TransparentFX

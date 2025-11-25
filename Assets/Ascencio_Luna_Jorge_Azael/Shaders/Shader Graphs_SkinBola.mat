@@ -55,7 +55,7 @@ Material:
     - _RotacionZ: 0.01
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.8, b: 0.8, a: 1}
     - _Color_1: {r: 0.3607843, g: 0.7026927, b: 0.94509804, a: 1}
     - _Color_2: {r: 0.38675806, g: 0.35248306, b: 0.8396226, a: 1}
   m_BuildTextureStacks: []

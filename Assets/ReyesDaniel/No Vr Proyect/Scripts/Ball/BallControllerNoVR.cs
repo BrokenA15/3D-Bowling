@@ -19,7 +19,7 @@ public class BallControllerNoVR : MonoBehaviour
     private Camera mainCam;
     private bool isCharging = false;
 
-    // Input System
+    
     private PlayerInput playerInput;
     private PlayerControls inputActions;
 

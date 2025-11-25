@@ -13,6 +13,8 @@ public class FireballMover : MonoBehaviour
     private void Start()
     {
         meshRenderer = GetComponent<MeshRenderer>();
+      
+        
     }
 
     public void Init(Vector3 point, float moveDuration)
@@ -39,9 +41,9 @@ public class FireballMover : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Fireball hit: " + other.tag);
+       
         
-        if (other.CompareTag("Player")  || other.CompareTag("Ground"))
+        if (other.CompareTag("Player")  || other.CompareTag("Ground") || other.CompareTag("Fireball") || other.CompareTag("Particle"))
         {
             meshRenderer.enabled = false;
         }

@@ -9,19 +9,22 @@ public class BolitaTakeDamage : MonoBehaviour
     private Rigidbody rb;
     public bool isOnCooldown = false;
     public float respawnCooldown = 5f;
+    private MeshRenderer meshRenderer;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         startPosition = transform.position;
         startRotation = transform.rotation;
+        meshRenderer = GetComponent<MeshRenderer>();
+        meshRenderer.enabled = true;
     }
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("PinoBoss"))
         {
            
-            BossLookAtPlayer boss = collision.collider.GetComponentInParent<BossLookAtPlayer>();
+            BossManager boss = collision.collider.GetComponentInParent<BossManager>();
 
             if (boss != null)
             {
@@ -29,11 +32,17 @@ public class BolitaTakeDamage : MonoBehaviour
             }
             StartCoroutine(RespawnRoutine());
         }
+        else if (collision.collider.CompareTag("RespawnBall"))
+        {
+            StartCoroutine(RespawnRoutine());
+
+        }
     }
     
     private IEnumerator RespawnRoutine()
     {
         isOnCooldown = true;
+        meshRenderer.enabled = false;
 
        
         rb.linearVelocity = Vector3.zero;
@@ -48,6 +57,7 @@ public class BolitaTakeDamage : MonoBehaviour
 
         
         rb.isKinematic = false;
+        meshRenderer.enabled = true;
 
         isOnCooldown = false;
     }
