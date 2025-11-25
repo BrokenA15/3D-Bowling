@@ -20,66 +20,68 @@ public class MenuPauseManager : MonoBehaviour
     [Header("Botón Exit")]
     public Button exitButton;
 
-    // Nombres de las propiedades del shader graph
+    // Properties del Shader
     string propColor1 = "_Color_1";
     string propColor2 = "_Color_2";
 
-
     public GameObject pausePanel;
-
-    public void ShowPauseMenu()
-    {
-        Debug.Log(">>> PAUSE MENU ACTIVADO desde WristLookEvent <<<");
-
-        pausePanel.SetActive(true);
-    }
-
-    public void HidePauseMenu()
-    {
-        Debug.Log(">>> PAUSE MENU DESACTIVADO <<<");
-
-        pausePanel.SetActive(false);
-    }
 
     void Start()
     {
         // FMOD instance
         musicInstance = musicEmitter.EventInstance;
 
-        // Listeners para sliders
-        sliderColor1.onValueChanged.AddListener(UpdateColor1);
-        sliderColor2.onValueChanged.AddListener(UpdateColor2);
+        // Aplicar valores iniciales SOLO si los sliders existen
+        if (sliderColor1 != null)
+            UpdateColor1(sliderColor1.value);
 
-        musicSlider.onValueChanged.AddListener(SetMusicVolume);
+        if (sliderColor2 != null)
+            UpdateColor2(sliderColor2.value);
 
-        exitButton.onClick.AddListener(() =>
-        {
-            Application.Quit();
-        });
-
-        // Aplicar valores iniciales
-        UpdateColor1(sliderColor1.value);
-        UpdateColor2(sliderColor2.value);
-        SetMusicVolume(musicSlider.value);
+        if (musicSlider != null)
+            SetMusicVolume(musicSlider.value);
     }
 
-    // Cambiar Color (1)
-    void UpdateColor1(float v)
+    // ------------------------------
+    // FUNCIONES PARA EL INSPECTOR
+    // ------------------------------
+
+    public void ShowPauseMenu()
     {
-        // Escala de gris basada en slider
+        Debug.Log(">>> PAUSE MENU ACTIVADO desde WristLookEvent <<<");
+        pausePanel.SetActive(true);
+    }
+
+    public void HidePauseMenu()
+    {
+        Debug.Log(">>> PAUSE MENU DESACTIVADO <<<");
+        pausePanel.SetActive(false);
+    }
+
+    public void ExitGame()
+    {
+        Debug.Log(">>> EXIT PRESIONADO <<<");
+
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+    }
+
+    public void UpdateColor1(float v)
+    {
         Color c = new Color(v, v, v, 1);
         targetMaterial.SetColor(propColor1, c);
     }
 
-    // Cambiar Color (2)
-    void UpdateColor2(float v)
+    public void UpdateColor2(float v)
     {
         Color c = new Color(v, v, v, 1);
         targetMaterial.SetColor(propColor2, c);
     }
 
-    // Control de volumen FMOD
-    void SetMusicVolume(float v)
+    public void SetMusicVolume(float v)
     {
         musicInstance.setParameterByName("MusicVolume", v);
     }
