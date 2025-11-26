@@ -10,6 +10,7 @@ public class BolitaTakeDamage : MonoBehaviour
     public bool isOnCooldown = false;
     public float respawnCooldown = 5f;
     private MeshRenderer meshRenderer;
+    public ParticleSystem collisionParticles;
 
     private void Start()
     {
@@ -18,7 +19,9 @@ public class BolitaTakeDamage : MonoBehaviour
         startRotation = transform.rotation;
         meshRenderer = GetComponent<MeshRenderer>();
         meshRenderer.enabled = true;
+        collisionParticles.Stop();
     }
+    
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("PinoBoss"))
@@ -41,6 +44,8 @@ public class BolitaTakeDamage : MonoBehaviour
     
     private IEnumerator RespawnRoutine()
     {
+       collisionParticles.Play();
+
         isOnCooldown = true;
         meshRenderer.enabled = false;
 

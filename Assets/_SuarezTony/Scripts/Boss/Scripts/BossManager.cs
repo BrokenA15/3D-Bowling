@@ -77,7 +77,11 @@ public class BossManager : MonoBehaviour
         
         if (currentHealth <= 100)
         {
-            IncreaseWeights();
+            SecondPhase();
+        }
+        if (currentHealth <= 50)
+        {
+            ThirdPhase();
         }
         if (currentHealth <= 0)
         {
@@ -267,7 +271,7 @@ public class BossManager : MonoBehaviour
         }
     }
     
-    private void IncreaseWeights()
+    private void SecondPhase()
     {
         Debug.Log("Boss en fase 2: aumentando probabilidades!");
 
@@ -284,6 +288,29 @@ public class BossManager : MonoBehaviour
 
             if (atk.name == "DoubleFist")
                 atk.weight = 30f;
+        }
+    }
+    
+    private void ThirdPhase()
+    {
+        Debug.Log("Boss en fase 2: aumentando probabilidades!");
+
+        foreach (var atk in attacks)
+        {
+            if (atk.name == "Fireball")
+                atk.weight = 40f;
+
+            if (atk.name == "DoubleFireball")
+                atk.weight = 30f;
+            
+            if (atk.name == "DoubleFist")
+                atk.weight = 0f;
+
+            if (atk.name == "FistDer" || atk.name == "FistIzq")
+                atk.weight = 0f;
+
+            if (atk.name == "DoubleFist")
+                atk.weight = 0f;
         }
     }
     
