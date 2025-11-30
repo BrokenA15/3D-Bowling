@@ -27,6 +27,7 @@ public class BossManager : MonoBehaviour
     public string attackFistIzq = "";
     public string attackFireball = "";
     public string attackDoubleFireball = "";
+    public string attackFire = "";
 
     [Header("Behaviours")] 
     
@@ -37,6 +38,8 @@ public class BossManager : MonoBehaviour
     private float timer;
     [Header("Fireball Settings")]
     public GameObject fireballPrefab;
+
+    public ParticleSystem fire;
     public Transform launchPoint;
     public float fireballDuration = 2f;
     public float fireballDistanceMax = 50f;
@@ -64,6 +67,7 @@ public class BossManager : MonoBehaviour
        canAttack = true;
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
+       fire.Stop();
    }
     
     public void TakeDamage(int amount)
@@ -210,6 +214,20 @@ public class BossManager : MonoBehaviour
         leftArmAnimator.SetTrigger(attackFistIzq);
     }
 
+    public void Fire()
+    {
+        isAttacking = true;
+        bossAnimator.SetTrigger(attackFire);
+    }
+    public void LaunchFire()
+    {
+        fire.Play();
+    }
+
+    public void StopFire()
+    {
+        fire.Stop();
+    }
     
     
     public void EndAttack()
@@ -266,6 +284,10 @@ public class BossManager : MonoBehaviour
             case "DoubleFireball":
                 DoubleFireball();
                 break;
+            
+            case "Fire":
+                Fire();
+                break;
 
           
         }
@@ -288,17 +310,20 @@ public class BossManager : MonoBehaviour
 
             if (atk.name == "DoubleFist")
                 atk.weight = 30f;
+            
+            if(atk.name == "Fire")
+                atk.weight = 0f;
         }
     }
     
     private void ThirdPhase()
     {
-        Debug.Log("Boss en fase 2: aumentando probabilidades!");
+        Debug.Log("Boss en fase 3: aumentando probabilidades!");
 
         foreach (var atk in attacks)
         {
             if (atk.name == "Fireball")
-                atk.weight = 40f;
+                atk.weight = 10f;
 
             if (atk.name == "DoubleFireball")
                 atk.weight = 30f;
@@ -311,6 +336,10 @@ public class BossManager : MonoBehaviour
 
             if (atk.name == "DoubleFist")
                 atk.weight = 0f;
+            
+            if(atk.name == "Fire")
+                atk.weight = 50f;
+
         }
     }
     

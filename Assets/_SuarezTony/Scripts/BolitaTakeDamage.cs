@@ -45,6 +45,8 @@ public class BolitaTakeDamage : MonoBehaviour
     private IEnumerator RespawnRoutine()
     {
        collisionParticles.Play();
+       yield return new WaitForSeconds(0.5f);
+       collisionParticles.Stop();
 
         isOnCooldown = true;
         meshRenderer.enabled = false;
