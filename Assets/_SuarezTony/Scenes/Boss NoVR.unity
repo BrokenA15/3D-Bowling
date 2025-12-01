@@ -94,7 +94,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: 74fc627ebcd1f0c408f7436c3c59af23, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7970,7 +7970,7 @@ Transform:
   m_GameObject: {fileID: 909382675}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 1.8, y: 98.1, z: 1.1}
+  m_LocalPosition: {x: 1.8, y: 73.6, z: 1.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58062,7 +58062,7 @@ MonoBehaviour:
     Path: event:/barrel_rolling_loop
   Event: 
   EventPlayTrigger: 3
-  EventStopTrigger: 0
+  EventStopTrigger: 4
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
@@ -64382,8 +64382,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 80.77
+  m_Color: {r: 0.4658273, g: 0.035848916, b: 1, a: 1}
+  m_Intensity: 84.55
   m_Range: 239.63425
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -64445,13 +64445,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1929594575}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.86214, y: 0.047309555, z: 0.08194255, w: 0.4977568}
-  m_LocalPosition: {x: -0.50000024, y: 98.1, z: 0.90000045}
+  m_LocalRotation: {x: 0.63071805, y: 0.015312497, z: 0.093371846, w: 0.77022207}
+  m_LocalPosition: {x: 23.91, y: 30.17, z: -63.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 121.731995, y: -20.989014, z: -18.070984}
+  m_LocalEulerAnglesHint: {x: 104.367004, y: -145.268, z: -138.889}
 --- !u!114 &1929594578
 MonoBehaviour:
   m_ObjectHideFlags: 0
