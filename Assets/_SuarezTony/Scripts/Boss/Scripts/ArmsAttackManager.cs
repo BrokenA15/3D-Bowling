@@ -24,6 +24,16 @@ public class ArmsAttackManager : MonoBehaviour
         managerBoss.DoubleFist();
     }
 
+    private void MainMaterialActive()
+    {
+        managerBoss.MainMaterial();
+        
+    }
+
+    private void AngryMaterialActive()
+    {
+        managerBoss.AngryMaterial();
+    }
     
     
     private void EndAttackActivate()

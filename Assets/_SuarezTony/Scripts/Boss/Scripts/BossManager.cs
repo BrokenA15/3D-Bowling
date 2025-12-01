@@ -53,9 +53,13 @@ public class BossManager : MonoBehaviour
     private int currentHealth;
 
     [Header("Material")] 
+    public MeshRenderer bossMeshRender;
     public Material armsRenderer;
-
     public Material bossRenderer;
+    public Material bossSpit;
+    public Material bossAngry;
+    
+    
     public Color maxHealthColor = new Color(254,255,200);
     public Color lowHealthColor = Color.red;
     
@@ -70,6 +74,8 @@ public class BossManager : MonoBehaviour
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
        armsRenderer.color = maxHealthColor;
+       bossSpit.color = maxHealthColor;
+       bossAngry.color = maxHealthColor;
        fire.Stop();
    }
     
@@ -125,6 +131,8 @@ public class BossManager : MonoBehaviour
        {
             bossRenderer.color = currentLerpedColor;
             armsRenderer.color = currentLerpedColor;
+            bossAngry.color = currentLerpedColor;
+            bossSpit.color = currentLerpedColor;
        }
           
    }
@@ -141,9 +149,13 @@ public class BossManager : MonoBehaviour
        
        bossRenderer.color = Color.white;
        armsRenderer.color = Color.white;
+       bossSpit.color = Color.white;
+       bossAngry.color = Color.white;
        yield return new WaitForSeconds(0.05f);
        bossRenderer.color = currentLerpedColor;
        armsRenderer.color = currentLerpedColor;
+       bossSpit.color = currentLerpedColor;
+       bossAngry.color = currentLerpedColor;
 
        isFlashing = false;
    }
@@ -177,6 +189,7 @@ public class BossManager : MonoBehaviour
 
     public void LaunchFireball()
     {
+        bossMeshRender.material = bossSpit;
         int ignoreLayer = LayerMask.NameToLayer("LimiteInter");
         int ignoreBoss = LayerMask.NameToLayer("Boss");
         int mask = ~((1 << ignoreLayer) | (1 << ignoreBoss));
@@ -230,6 +243,7 @@ public class BossManager : MonoBehaviour
     }
     public void LaunchFire()
     {
+        bossMeshRender.material = bossSpit;
         fire.Play();
     }
 
@@ -244,7 +258,16 @@ public class BossManager : MonoBehaviour
         
         isAttacking = false;
     }
-    
+
+    public void MainMaterial()
+    {
+        bossMeshRender.material = bossRenderer;
+    }
+
+    public void AngryMaterial()
+    {
+        bossMeshRender.material = bossAngry;
+    }
     
     private string GetRandomAttack()
     {
