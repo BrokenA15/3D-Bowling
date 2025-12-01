@@ -486,7 +486,7 @@ MonoBehaviour:
   Path: ../Carpetony/5to Semestre/Proyecto Semestral/Examples/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638961190847304505
+  lastModified: 639001819238487327
   FileSizes:
   - Name: Desktop
     Value: 21581664
@@ -897,7 +897,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -3356258422299927035}
   cacheVersion: 131849
-  cacheTime: 638961190847304505
+  cacheTime: 639001819238487327
   SerializableEventsDict:
   - key: snapshot:/Slow-Motion
     index: 0
