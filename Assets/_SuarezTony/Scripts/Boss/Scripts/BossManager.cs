@@ -53,6 +53,8 @@ public class BossManager : MonoBehaviour
     private int currentHealth;
 
     [Header("Material")] 
+    public Material armsRenderer;
+
     public Material bossRenderer;
     public Color maxHealthColor = new Color(254,255,200);
     public Color lowHealthColor = Color.red;
@@ -67,6 +69,7 @@ public class BossManager : MonoBehaviour
        canAttack = true;
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
+       armsRenderer.color = maxHealthColor;
        fire.Stop();
    }
     
@@ -117,9 +120,13 @@ public class BossManager : MonoBehaviour
        float healthPercent = Mathf.Clamp01((float)currentHealth / maxHealth);
 
        currentLerpedColor = Color.Lerp(lowHealthColor, maxHealthColor, healthPercent);
-       
+
        if (!isFlashing)
-           bossRenderer.color = currentLerpedColor;
+       {
+            bossRenderer.color = currentLerpedColor;
+            armsRenderer.color = currentLerpedColor;
+       }
+          
    }
    
    private void BlackFlash()
@@ -133,8 +140,10 @@ public class BossManager : MonoBehaviour
        isFlashing = true;
        
        bossRenderer.color = Color.white;
+       armsRenderer.color = Color.white;
        yield return new WaitForSeconds(0.05f);
        bossRenderer.color = currentLerpedColor;
+       armsRenderer.color = currentLerpedColor;
 
        isFlashing = false;
    }
