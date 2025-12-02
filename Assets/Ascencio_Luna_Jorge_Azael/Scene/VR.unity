@@ -10871,6 +10871,10 @@ PrefabInstance:
       propertyPath: smoothTurnSpeed
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 6707951067419483810, guid: a5226a72c9553294abfe172a458b5805, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 7942002210201157543, guid: a5226a72c9553294abfe172a458b5805, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
