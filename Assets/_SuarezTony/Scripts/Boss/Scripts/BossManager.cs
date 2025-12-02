@@ -40,6 +40,7 @@ public class BossManager : MonoBehaviour
     public GameObject fireballPrefab;
 
     public ParticleSystem fire;
+    public SphereCollider fireCollider;
     public Transform launchPoint;
     public float fireballDuration = 2f;
     public float fireballDistanceMax = 50f;
@@ -70,6 +71,7 @@ public class BossManager : MonoBehaviour
     private void Start()
    {
        bossAnimator.SetBool(bossDead, false);
+       fireCollider.enabled = false;
        canAttack = true;
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
@@ -245,11 +247,15 @@ public class BossManager : MonoBehaviour
     {
         bossMeshRender.material = bossSpit;
         fire.Play();
+        fireCollider.enabled = true;
+
     }
 
     public void StopFire()
     {
         fire.Stop();
+        fireCollider.enabled = false;
+
     }
     
     
