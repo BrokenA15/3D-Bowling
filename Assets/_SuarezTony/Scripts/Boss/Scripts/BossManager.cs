@@ -14,6 +14,7 @@ public class BossManager : MonoBehaviour
 
      public List<BossAttack> attacks = new List<BossAttack>();
 
+     public GameObject bossFightScene;
     [Header("Arms")] 
     public GameObject rightArm;
     public GameObject leftArm;
@@ -69,10 +70,11 @@ public class BossManager : MonoBehaviour
     
 
     private void Start()
-   {
+    {
+        bossFightScene.SetActive(false);
        bossAnimator.SetBool(bossDead, false);
        fireCollider.enabled = false;
-       canAttack = true;
+       canAttack = false;
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
        armsRenderer.color = maxHealthColor;

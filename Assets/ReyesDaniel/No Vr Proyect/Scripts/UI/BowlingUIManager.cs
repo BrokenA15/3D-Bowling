@@ -13,7 +13,7 @@ public class BowlingUIManager : MonoBehaviour
     [Header("Barra de fuerza")]
     public Image forceBarFill;
 
-    [Header("Configuración")]
+    [Header("Configuraciï¿½n")]
     public Color lowForceColor = Color.green;
     public Color highForceColor = Color.red;
 
@@ -57,7 +57,7 @@ public class BowlingUIManager : MonoBehaviour
     public void UpdateRound(int round)
     {
         if (roundText != null)
-            roundText.text = $"Round: {round} / 10";
+            roundText.text = $"Round: {round} / 5";
     }
 
     public void UpdateState(string msg)

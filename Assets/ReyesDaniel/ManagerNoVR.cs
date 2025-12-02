@@ -38,7 +38,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     public BowlingUIManager uiManager;
 
     private int round = 1;
-    private const int maxRounds = 10;
+    private const int maxRounds = 5;
     private int turn = 1;
     private float stillTimer = 0f;
     private TurnState currentState = TurnState.TurnPreparation;
@@ -266,7 +266,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     void ResetBallPosition()
     {
         if (ballController == null) return;
-        ballController.ResetBall(new Vector3(275.950012f, 16.2299995f, -450.309998f));
+        ballController.ResetBall(new Vector3(608.169983f,701.289978f,555.900024f));
     }
 
     void EnterTurnPreparation()
