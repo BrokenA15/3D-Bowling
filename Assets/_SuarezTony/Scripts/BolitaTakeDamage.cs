@@ -7,6 +7,7 @@ public class BolitaTakeDamage : MonoBehaviour
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Rigidbody rb;
+    public int damage = 10;
     public bool isOnCooldown = false;
     public float respawnCooldown = 5f;
     private MeshRenderer meshRenderer;
@@ -31,7 +32,7 @@ public class BolitaTakeDamage : MonoBehaviour
 
             if (boss != null)
             {
-                boss.TakeDamage(10);  
+                boss.TakeDamage(damage);  
             }
             StartCoroutine(RespawnRoutine());
         }
