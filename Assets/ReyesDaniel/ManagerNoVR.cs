@@ -11,6 +11,9 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         BallThrown,
         ProcessingPins
     }
+    
+    public DisableWall disableWall;
+    public bool endgame;
 
     [Header("Pinos")]
     public GameObject pinPrefab;
@@ -38,7 +41,8 @@ public class BowlingGameManagerNoVR : MonoBehaviour
     public BowlingUIManager uiManager;
 
     private int round = 1;
-    private const int maxRounds = 5;
+    [SerializeField]
+    private const int maxRounds = 2;
     private int turn = 1;
     private float stillTimer = 0f;
     private TurnState currentState = TurnState.TurnPreparation;
@@ -181,9 +185,13 @@ public class BowlingGameManagerNoVR : MonoBehaviour
             if (round > maxRounds)
             {
                 uiManager.UpdateState("🎉 Game ending");
-                round = 1;
-                SetupPins();
-                pinosEnPieAnterior = 10;
+                endgame = true;
+                if (endgame == true)
+                {
+                     disableWall.WallDisable();
+                }
+               
+
 
             }
 
@@ -222,9 +230,11 @@ public class BowlingGameManagerNoVR : MonoBehaviour
         if (round > maxRounds)
         {
             uiManager.UpdateState("🎉 Game ending");
-            round = 1;
-            SetupPins();
-            pinosEnPieAnterior = 10;
+            endgame = true;
+            if (endgame == true)
+            {
+                disableWall.WallDisable();
+            }
 
 
         }

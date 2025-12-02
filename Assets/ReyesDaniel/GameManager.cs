@@ -42,7 +42,8 @@ public class BowlingGameManager : MonoBehaviour
     public int maxRondas = 10;
     private int rondaActual = 1;
 
-    [Header("Escena Final")]
+    [Header("Escena Final")] 
+    public DisableWall wallDisable;
     public string nextSceneName = "BossVR";
 
     private int turn = 1;
@@ -177,7 +178,7 @@ public class BowlingGameManager : MonoBehaviour
             // CHUZA → pasar a siguiente ronda
             if (currentPins.Count == 0)
             {
-                Debug.Log("💥 CHUZA! Avanza de ronda.");
+                //Debug.Log("💥 CHUZA! Avanza de ronda.");
 
                 rondaActual++;
                 turn = 1;
@@ -185,8 +186,8 @@ public class BowlingGameManager : MonoBehaviour
 
                 if (rondaActual > maxRondas)
                 {
-                    Debug.Log("🏁 Rondas completadas. Cargando escena...");
-                    SceneManager.LoadScene(nextSceneName);
+                    wallDisable.WallDisable();
+                   
                     yield break;
                 }
 
@@ -197,12 +198,12 @@ public class BowlingGameManager : MonoBehaviour
                 // Pasar al segundo tiro
                 turn = 2;
                 pinosEnPieAnterior = currentPins.Count;
-                Debug.Log("➡️ Pasa al segundo tiro.");
+                //Debug.Log("➡️ Pasa al segundo tiro.");
             }
         }
         else  // turn == 2
         {
-            Debug.Log("🔁 Fin de la ronda normal.");
+            //Debug.Log("🔁 Fin de la ronda normal.");
 
             rondaActual++;
             turn = 1;
@@ -210,8 +211,9 @@ public class BowlingGameManager : MonoBehaviour
 
             if (rondaActual > maxRondas)
             {
-                Debug.Log("🏁 Se completaron las rondas. Cargando escena final...");
-                SceneManager.LoadScene(nextSceneName);
+                //Debug.Log("🏁 Se completaron las rondas. Cargando escena final...");
+                wallDisable.WallDisable();
+
                 yield break;
             }
 

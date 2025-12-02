@@ -7,37 +7,32 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: normalmap.001 Variant
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: -4328921452497609594, guid: 9f09084767ac2d944aaf9c022a374928, type: 3}
+  m_Name: Shader Graphs_SkinBola Variant
+  m_Shader: {fileID: -6465566751694194690, guid: b15ac3d4ab0aa0b4a900fbcf61e56f74, type: 3}
+  m_Parent: {fileID: 2100000, guid: e5470e9c9c57b48499762130cdd4fbe9, type: 2}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _NORMALMAP
+  - _MAIN_LIGHT_SHADOWS
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ed9b647cd4ad31c4c85f64199d7ab380, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.8666667, b: 0.8666667, a: 1}
-    - _Color: {r: 1, g: 0.8666667, b: 0.8666667, a: 1}
+    - _Color_1: {r: 0.6603774, g: 0.54602736, b: 0.15824135, a: 0}
+    - _Color_2: {r: 0.6603774, g: 0.6518369, b: 0.23300107, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &1306476026642937713
+--- !u!114 &3546913960843895763
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

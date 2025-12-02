@@ -4,12 +4,16 @@ using System.Collections;
 
 public class BolitaTakeDamage : MonoBehaviour
 {
+    
+    [Header("Respawn Points")]
+    public Transform[] respawnPoints;
+    
     private Vector3 startPosition;
     private Quaternion startRotation;
     private Rigidbody rb;
     public int damage = 10;
     public bool isOnCooldown = false;
-    public float respawnCooldown = 5f;
+    public float respawnCooldown = 3f;
     private MeshRenderer meshRenderer;
     public ParticleSystem collisionParticles;
 
@@ -60,10 +64,19 @@ public class BolitaTakeDamage : MonoBehaviour
         
         yield return new WaitForSeconds(respawnCooldown);
 
-        transform.position = startPosition;
-        transform.rotation = startRotation;
+        if (respawnPoints.Length > 0)
+        {
+            int index = Random.Range(0, respawnPoints.Length);
+            transform.position = respawnPoints[index].position;
+            transform.rotation = respawnPoints[index].rotation;
+        }
+        else
+        {
+            // fallback si no hay puntos asignados
+            transform.position = startPosition;
+            transform.rotation = startRotation;
+        }
 
-        
         rb.isKinematic = false;
         meshRenderer.enabled = true;
 

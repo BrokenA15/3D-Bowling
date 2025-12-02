@@ -14,7 +14,6 @@ public class BossManager : MonoBehaviour
 
      public List<BossAttack> attacks = new List<BossAttack>();
 
-     public GameObject bossFightScene;
     [Header("Arms")] 
     public GameObject rightArm;
     public GameObject leftArm;
@@ -50,7 +49,7 @@ public class BossManager : MonoBehaviour
     public float gizmoSphereRadius = 0.3f;
     
     [Header("Health")] 
-    public int maxHealth = 100;
+    public int maxHealth = 150;
     [SerializeField]
     private int currentHealth;
 
@@ -71,10 +70,9 @@ public class BossManager : MonoBehaviour
 
     private void Start()
     {
-        bossFightScene.SetActive(false);
        bossAnimator.SetBool(bossDead, false);
        fireCollider.enabled = false;
-       canAttack = false;
+       canAttack = true;
        currentHealth = maxHealth;
        bossRenderer.color = maxHealthColor;
        armsRenderer.color = maxHealthColor;
