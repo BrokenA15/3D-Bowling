@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BossManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BossManager : MonoBehaviour
         public float weight;    
     }
 
+    public GameObject winCanvas;
      public List<BossAttack> attacks = new List<BossAttack>();
 
     [Header("Arms")] 
@@ -79,6 +81,8 @@ public class BossManager : MonoBehaviour
        bossSpit.color = maxHealthColor;
        bossAngry.color = maxHealthColor;
        fire.Stop();
+       winCanvas.SetActive(false);
+
    }
     
     public void TakeDamage(int amount)
@@ -164,9 +168,10 @@ public class BossManager : MonoBehaviour
    
    private void Die()
    {
-       Debug.Log("Boss derrotado");
+       
        canAttack = false;
        bossAnimator.SetBool(bossDead, true);
+       StartCoroutine(EsperarCanvas());
    }
 
     public void FistDer()
@@ -379,6 +384,12 @@ public class BossManager : MonoBehaviour
                 atk.weight = 50f;
 
         }
+    }
+
+    private IEnumerator EsperarCanvas()
+    {
+        yield return new WaitForSeconds(10f);
+        winCanvas.SetActive(true);
     }
     
     private void OnDrawGizmos()
