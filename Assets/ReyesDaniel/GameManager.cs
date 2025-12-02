@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class BowlingGameManager : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class BowlingGameManager : MonoBehaviour
     public GameObject pinPrefab;
     public Transform[] pinSpawnPoints;
     public List<GameObject> currentPins = new List<GameObject>();
-    private int totalPinosCaidos = 0;       // Total acumulado entre rondas
-    private int pinosEnPieAnterior = 10;    // Cuántos pinos había antes del tiro
-    private int pinosCaidosEsteTurno = 0;   // Pinos derribados en este tiro
+    private int totalPinosCaidos = 0;
+    private int pinosEnPieAnterior = 10;
+    private int pinosCaidosEsteTurno = 0;
 
     private List<Vector3> initialPinPositions = new List<Vector3>();
     private List<Quaternion> initialPinRotations = new List<Quaternion>();
@@ -35,7 +36,14 @@ public class BowlingGameManager : MonoBehaviour
     public float snapDuration = 0.3f;
 
     [Header("Tiempos")]
-    public float pinRespawnDelay = 2f; // 🕒 Tiempo antes de volver a generar los pinos
+    public float pinRespawnDelay = 2f;
+
+    [Header("Juego")]
+    public int maxRondas = 10;
+    private int rondaActual = 1;
+
+    [Header("Escena Final")]
+    public string nextSceneName = "BossVR";
 
     private int turn = 1;
     private float stillTimer = 0f;
@@ -46,7 +54,7 @@ public class BowlingGameManager : MonoBehaviour
         if (bowlingBallRB == null)
             bowlingBallRB = FindFirstObjectByType<Rigidbody>();
 
-        StartCoroutine(SetupPinsWithDelay(0f)); // genera al inicio sin delay
+        StartCoroutine(SetupPinsWithDelay(0f));
         ResetBallPosition();
         EnterTurnPreparation();
     }
@@ -72,13 +80,10 @@ public class BowlingGameManager : MonoBehaviour
 
     void DetectBallThrow()
     {
-        if (currentState == TurnState.WaitingThrow && bowlingBallRB != null)
+        if (currentState == TurnState.WaitingThrow && bowlingBallRB.linearVelocity.magnitude > stopThreshold)
         {
-            if (bowlingBallRB.linearVelocity.magnitude > stopThreshold)
-            {
-                currentState = TurnState.BallThrown;
-                stillTimer = 0f;
-            }
+            currentState = TurnState.BallThrown;
+            stillTimer = 0f;
         }
     }
 
@@ -102,7 +107,6 @@ public class BowlingGameManager : MonoBehaviour
 
     public void SetupPins()
     {
-        // 🔄 Limpia pinos anteriores
         foreach (GameObject pin in currentPins)
         {
             if (pin != null)
@@ -113,7 +117,6 @@ public class BowlingGameManager : MonoBehaviour
         initialPinPositions.Clear();
         initialPinRotations.Clear();
 
-        // 🔹 Instancia nuevos pinos
         foreach (Transform spawn in pinSpawnPoints)
         {
             GameObject pin = Instantiate(pinPrefab, spawn.position, spawn.rotation);
@@ -146,7 +149,7 @@ public class BowlingGameManager : MonoBehaviour
             Quaternion initialRot = initialPinRotations[i];
             float angle = Quaternion.Angle(currentRot, initialRot);
 
-            if (angle < 30f) // sigue de pie
+            if (angle < 30f)
             {
                 standingPins.Add(pin);
                 StartCoroutine(SnapPinToPosition(pin, initialPinPositions[i], initialPinRotations[i]));
@@ -161,43 +164,60 @@ public class BowlingGameManager : MonoBehaviour
         pinosCaidosEsteTurno = pinosEnPieAnterior - currentPins.Count;
         if (pinosCaidosEsteTurno < 0) pinosCaidosEsteTurno = 0;
 
-        // 🟢 Sumar al total general
         totalPinosCaidos += pinosCaidosEsteTurno;
 
-
-        // 📊 Mostrar información en consola
-        Debug.Log($"🎳 Turno {turn}: Caídos = {pinosCaidosEsteTurno}, Total = {totalPinosCaidos}");
         ActPin.UpdatePins(totalPinosCaidos);
 
-        // 🟡 --- Lógica de turnos y chuza ---
+        Debug.Log($"🎳 Turno {turn} Ronda {rondaActual}: Caídos = {pinosCaidosEsteTurno}, Total = {totalPinosCaidos}");
+
+        // ----------- LÓGICA PRINCIPAL --------------
+
         if (turn == 1)
         {
+            // CHUZA → pasar a siguiente ronda
             if (currentPins.Count == 0)
             {
-                // 🎯 CHUZA
-                Debug.Log("💥 CHUZA en el primer tiro! Reiniciando pinos.");
+                Debug.Log("💥 CHUZA! Avanza de ronda.");
+
+                rondaActual++;
                 turn = 1;
-                pinosEnPieAnterior = 10; // reinicia los pinos para la nueva ronda
+                pinosEnPieAnterior = 10;
+
+                if (rondaActual > maxRondas)
+                {
+                    Debug.Log("🏁 Rondas completadas. Cargando escena...");
+                    SceneManager.LoadScene(nextSceneName);
+                    yield break;
+                }
+
                 StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
             }
             else
             {
-                // Pasar al segundo turno
+                // Pasar al segundo tiro
                 turn = 2;
-                pinosEnPieAnterior = currentPins.Count; // guarda cuántos quedaron de pie
-                Debug.Log($"➡️ Segundo tiro, quedan {pinosEnPieAnterior} pinos en pie.");
+                pinosEnPieAnterior = currentPins.Count;
+                Debug.Log("➡️ Pasa al segundo tiro.");
             }
         }
-        else
+        else  // turn == 2
         {
-            // Fin de la ronda
-            Debug.Log("🔁 Fin de la ronda, reiniciando pinos.");
+            Debug.Log("🔁 Fin de la ronda normal.");
+
+            rondaActual++;
             turn = 1;
-            pinosEnPieAnterior = 10; // reinicia para la siguiente ronda
+            pinosEnPieAnterior = 10;
+
+            if (rondaActual > maxRondas)
+            {
+                Debug.Log("🏁 Se completaron las rondas. Cargando escena final...");
+                SceneManager.LoadScene(nextSceneName);
+                yield break;
+            }
+
             StartCoroutine(SetupPinsWithDelay(pinRespawnDelay));
         }
 
-        // Reinicia la bola y el estado del turno
         ResetBallPosition();
         EnterTurnPreparation();
     }
@@ -208,7 +228,6 @@ public class BowlingGameManager : MonoBehaviour
         if (pin != null)
         {
             pin.SetActive(false);
-            Debug.Log("❌ Pino desactivado");
         }
     }
 
@@ -231,9 +250,6 @@ public class BowlingGameManager : MonoBehaviour
 
         while (elapsed < snapDuration)
         {
-            if (pin == null || !pin.activeInHierarchy)
-                yield break;
-
             float t = elapsed / snapDuration;
             pin.transform.position = Vector3.Lerp(startPos, targetPos, t);
             pin.transform.rotation = Quaternion.Slerp(startRot, targetRot, t);
@@ -241,12 +257,9 @@ public class BowlingGameManager : MonoBehaviour
             yield return null;
         }
 
-        if (pin != null && pin.activeInHierarchy)
-        {
-            pin.transform.position = targetPos;
-            pin.transform.rotation = targetRot;
-            rb.isKinematic = false;
-        }
+        pin.transform.position = targetPos;
+        pin.transform.rotation = targetRot;
+        rb.isKinematic = false;
     }
 
     void ResetBallPosition()
@@ -255,13 +268,13 @@ public class BowlingGameManager : MonoBehaviour
 
         bowlingBallRB.linearVelocity = Vector3.zero;
         bowlingBallRB.angularVelocity = Vector3.zero;
-        bowlingBallRB.transform.position = new Vector3(11.7180004f, 0.768000007f, -19.4759998f);
+        bowlingBallRB.transform.position = new Vector3(11.4320002f, 0.520427763f, -18.9416275f);
         bowlingBallRB.transform.rotation = Quaternion.identity;
     }
 
     void EnterTurnPreparation()
     {
         currentState = TurnState.TurnPreparation;
-        Debug.Log("🟢 Turno listo, espera a que el jugador tome la bola (VR).");
+        Debug.Log("🟢 Turno preparado");
     }
 }
