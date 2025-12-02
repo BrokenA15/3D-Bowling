@@ -13,6 +13,7 @@ public class BossManager : MonoBehaviour
         public float weight;    
     }
 
+    public string menuPrincipal;
     public GameObject winCanvas;
      public List<BossAttack> attacks = new List<BossAttack>();
 
@@ -389,10 +390,11 @@ public class BossManager : MonoBehaviour
     private IEnumerator EsperarCanvas()
     {
         yield return new WaitForSeconds(10f);
-        Time.timeScale = 0f;
         winCanvas.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene(menuPrincipal);
     }
-    
+
     private void OnDrawGizmos()
     {
         if (launchPoint == null)

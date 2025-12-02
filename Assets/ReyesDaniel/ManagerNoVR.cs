@@ -42,7 +42,7 @@ public class BowlingGameManagerNoVR : MonoBehaviour
 
     private int round = 1;
     [SerializeField]
-    private const int maxRounds = 2;
+    private const int maxRounds = 5;
     private int turn = 1;
     private float stillTimer = 0f;
     private TurnState currentState = TurnState.TurnPreparation;
