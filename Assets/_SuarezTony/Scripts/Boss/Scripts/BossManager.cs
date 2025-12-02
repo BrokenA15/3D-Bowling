@@ -389,6 +389,7 @@ public class BossManager : MonoBehaviour
     private IEnumerator EsperarCanvas()
     {
         yield return new WaitForSeconds(10f);
+        Time.timeScale = 0f;
         winCanvas.SetActive(true);
     }
     
