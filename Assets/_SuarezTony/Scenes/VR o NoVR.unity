@@ -637,8 +637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25450d208fb19cc47a2621b46dc20ba3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VRSceneLoader
-  vrSceneName: VR
-  noVrSceneName: NoVRDaniel
+  vrSceneName: MenuVR
+  noVrSceneName: MenuPrincipalNoVR
 --- !u!4 &2102705389
 Transform:
   m_ObjectHideFlags: 0
