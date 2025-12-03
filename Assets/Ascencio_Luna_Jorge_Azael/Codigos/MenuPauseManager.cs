@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using FMODUnity;
 using FMOD.Studio;
+using UnityEngine.SceneManagement;
 
 public class MenuPauseManager : MonoBehaviour
 {
@@ -64,6 +65,7 @@ public class MenuPauseManager : MonoBehaviour
 
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MenuVR");
 #else
         Application.Quit();
 #endif

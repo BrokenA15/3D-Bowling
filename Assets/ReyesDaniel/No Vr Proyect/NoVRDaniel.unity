@@ -1578,7 +1578,7 @@ PrefabInstance:
     - target: {fileID: 1801043556086073980, guid: 2cc2ac16b0597f3438b72951e17fdc3b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: aee36ceb5eb38674b83aeb7b43146e02, type: 2}
+      objectReference: {fileID: 2100000, guid: 5def92ede5ca99043a237e3a03ba1010, type: 2}
     - target: {fileID: 2296037408126886614, guid: 2cc2ac16b0597f3438b72951e17fdc3b, type: 3}
       propertyPath: m_Name
       value: Cube (11)
@@ -1647,6 +1647,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ce087dcd73e82c84e881efc02a6d65ab, type: 2}
+    - target: {fileID: 8274741923184272554, guid: 2cc2ac16b0597f3438b72951e17fdc3b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.498
+      objectReference: {fileID: 0}
+    - target: {fileID: 8274741923184272554, guid: 2cc2ac16b0597f3438b72951e17fdc3b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.001
+      objectReference: {fileID: 0}
     - target: {fileID: 8323345350252998180, guid: 2cc2ac16b0597f3438b72951e17fdc3b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 

@@ -10,4 +10,11 @@ public class playagain : MonoBehaviour
     Debug.Log("lasfjsgk");
     SceneManager.LoadScene(nombreescena);
   }
+
+    public void ReloadScene()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
