@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{7fb84e77-b54d-4aba-ac51-9c636693ea5a}">
+		<property name="assetPath">
+			<value>New Folder/Música/Música Final Boss.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>78.936000000000007</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{629ebc7e-de16-466c-b5b4-aa27605d9929}</destination>
+		</relationship>
+	</object>
+</objects>
