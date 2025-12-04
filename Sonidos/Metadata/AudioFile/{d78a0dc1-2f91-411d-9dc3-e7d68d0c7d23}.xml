@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{d78a0dc1-2f91-411d-9dc3-e7d68d0c7d23}">
+		<property name="assetPath">
+			<value>Grito del jefe pino 1.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>8.0979591836734688</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{629ebc7e-de16-466c-b5b4-aa27605d9929}</destination>
+		</relationship>
+	</object>
+</objects>
