@@ -51,6 +51,60 @@ MonoBehaviour:
   - Grass
   - Wood Floor
   Exists: 1
+--- !u!114 &-8629160116290288243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Tama\xF1os/Bola mediana"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Tama\xF1os/Bola mediana"
+  Guid:
+    Data1: -1115229447
+    Data2: 1209693714
+    Data3: -1963429191
+    Data4: -1271241371
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1392
+--- !u!114 &-8597632626732669371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Acciones del Juego/Spare
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Acciones del Juego/Spare
+  Guid:
+    Data1: -982288596
+    Data2: 1165310823
+    Data3: -770676862
+    Data4: -781720197
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8097
 --- !u!114 &-8397586847772547427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,6 +161,80 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8312892166466869025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bolas Golpes/Bola chocando con pinos
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Bolas Golpes/Bola chocando con pinos
+  Guid:
+    Data1: -244938580
+    Data2: 1302580922
+    Data3: -1999815760
+    Data4: 443508840
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3024
+--- !u!114 &-8178817570018616354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Fuego/Sonido de bola de fuego movi\xE9ndose"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Fuego/Sonido de bola de fuego movi\xE9ndose"
+  Guid:
+    Data1: -463344231
+    Data2: 1205564444
+    Data3: -1073314116
+    Data4: -144330338
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48024
+--- !u!114 &-8026243769207849861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: "bank:/M\xFAsica.bank"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: "../../../Downloads/Sonidos/Sonidos/Build/Desktop/M\xFAsica.bank"
+  Name: "M\xFAsica"
+  StudioPath: "bank:/M\xFAsica"
+  lastModified: 639004527031566747
+  FileSizes:
+  - Name: Desktop
+    Value: 6576288
+  Exists: 1
 --- !u!114 &-7996520032211667816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,6 +290,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1859
+--- !u!114 &-7522903765579823019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Menu Music"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica/Menu Music"
+  Guid:
+    Data1: -1175699528
+    Data2: 1300463364
+    Data3: 1064613566
+    Data4: 373860756
+  Banks:
+  - {fileID: -8026243769207849861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 147024
+--- !u!114 &-7520221478308209094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Timers/Sonido de Timer Intenso
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Timers/Sonido de Timer Intenso
+  Guid:
+    Data1: -2128419410
+    Data2: 1130613822
+    Data3: 1568112031
+    Data4: -1914165485
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 40829
 --- !u!114 &-7453285093951815046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +370,60 @@ MonoBehaviour:
   - Intro
   - Main
   Exists: 1
+--- !u!114 &-7446166843349383266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Timers/Sonido de Timer
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Timers/Sonido de Timer
+  Guid:
+    Data1: 1005183281
+    Data2: 1330045365
+    Data3: -826227026
+    Data4: 1663960045
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8097
+--- !u!114 &-7095104407643403268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bolas Golpes/Choque
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Bolas Golpes/Choque
+  Guid:
+    Data1: 345339217
+    Data2: 1167540234
+    Data3: -339086959
+    Data4: -402190618
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 600
 --- !u!114 &-7042903139015449335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +528,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 56888
+--- !u!114 &-6448193334798528325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pinos/Pinos Cayendo al suelo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Pinos/Pinos Cayendo al suelo
+  Guid:
+    Data1: -188110928
+    Data2: 1241676940
+    Data3: -721597784
+    Data4: 980341817
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2952
+--- !u!114 &-6265727107154778219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Acciones del Juego 2/Sonido para indicar que el jugador gan\xF3"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Acciones del Juego 2/Sonido para indicar que el jugador gan\xF3"
+  Guid:
+    Data1: -386602565
+    Data2: 1195879101
+    Data3: 1670749315
+    Data4: -121020110
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2951
+--- !u!114 &-6212101285827293893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tiros/Sonido para indicar que es el tercer Tiro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tiros/Sonido para indicar que es el tercer Tiro
+  Guid:
+    Data1: -323308373
+    Data2: 1102641313
+    Data3: 678296972
+    Data4: -705030024
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2142
 --- !u!114 &-6167405802145985915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +660,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5800794669047727403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Golpes/Bola cay\xE9nose a la zanja"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Golpes/Bola cay\xE9nose a la zanja"
+  Guid:
+    Data1: 1608611045
+    Data2: 1102899319
+    Data3: 1850725818
+    Data4: 1253446721
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10920
 --- !u!114 &-5531793088126857052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +731,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 15938
   Exists: 1
+--- !u!114 &-5322480754393278285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Timers/Sonido de Timer acabando (pitido)
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Timers/Sonido de Timer acabando (pitido)
+  Guid:
+    Data1: 1921990798
+    Data2: 1301801908
+    Data3: -878318945
+    Data4: -338203205
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1032
+--- !u!114 &-5274952821032052360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Tama\xF1os/Bola chica"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Tama\xF1os/Bola chica"
+  Guid:
+    Data1: -32545957
+    Data2: 1270429285
+    Data3: 714908569
+    Data4: -182153013
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1200
 --- !u!114 &-5201533040143973689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,6 +962,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 66560
   Exists: 1
+--- !u!114 &-3584666366022119562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tiros/Sonido para indicar que es el primer Tiro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tiros/Sonido para indicar que es el primer Tiro
+  Guid:
+    Data1: 1552891926
+    Data2: 1341896572
+    Data3: -549066368
+    Data4: -870022191
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2232
+--- !u!114 &-3545343582715008568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Tama\xF1os/Bola grande"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Tama\xF1os/Bola grande"
+  Guid:
+    Data1: -1411107059
+    Data2: 1226982275
+    Data3: -1846490204
+    Data4: -937454522
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1368
 --- !u!114 &-3356258422299927035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -648,6 +1100,26 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3207011124976229285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639004527030171525
+  FileSizes:
+  - Name: Desktop
+    Value: 3184
+  Exists: 1
 --- !u!114 &-3055534461744789691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +1174,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1026
+--- !u!114 &-2577515011890068664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bolas Fuego/Sonido de choque de la bola de fuego
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Bolas Fuego/Sonido de choque de la bola de fuego
+  Guid:
+    Data1: 1402711968
+    Data2: 1135111249
+    Data3: -1317857136
+    Data4: 1585841919
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3082
+--- !u!114 &-2565488986324872867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tiros/Sonido de los pinos levantandose para el segundo tiro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tiros/Sonido de los pinos levantandose para el segundo tiro
+  Guid:
+    Data1: -654603329
+    Data2: 1146455137
+    Data3: 2119505546
+    Data4: 566551912
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4008
 --- !u!114 &-2509167858295348961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -784,6 +1310,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1274
+--- !u!114 &-1109323725199294612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos Del Jefe/Grito del jefe al ser derrotado
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Gritos Del Jefe/Grito del jefe al ser derrotado
+  Guid:
+    Data1: -1491573614
+    Data2: 1123440495
+    Data3: 465785780
+    Data4: -101443651
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5112
 --- !u!114 &-791111509675405875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,6 +1390,87 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-472924656067940857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Sonidos Espec\xEDficos/Pasos"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Sonidos Espec\xEDficos/Pasos"
+  Guid:
+    Data1: 862281988
+    Data2: 1141483468
+    Data3: -2052247671
+    Data4: -397210044
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 620
+--- !u!114 &-440634760526552158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/M\xFAsica Final Boss"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica/M\xFAsica Final Boss"
+  Guid:
+    Data1: -378652839
+    Data2: 1214776331
+    Data3: -2023646577
+    Data4: -237907601
+  Banks:
+  - {fileID: -8026243769207849861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 78936
+--- !u!114 &-249410335994106254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Acciones del Juego 2/Sonido de Victoria Final
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Acciones del Juego 2/Sonido de Victoria Final
+  Guid:
+    Data1: 1708066526
+    Data2: 1112953296
+    Data3: -1509086290
+    Data4: -1478530934
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10083
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,117 +1484,167 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: -3356258422299927035}
-  - {fileID: 7456866769205031894}
-  - {fileID: -3283429533383566004}
-  - {fileID: -3705344709042732840}
-  - {fileID: -5410980213095377784}
-  - {fileID: 8408350129270076897}
-  - {fileID: -4707859846235561602}
-  - {fileID: -3354195171584355607}
-  - {fileID: 4965833457358923034}
+  - {fileID: -3207011124976229285}
+  - {fileID: 4806261860224790927}
+  - {fileID: -8026243769207849861}
+  - {fileID: 700472977705679285}
   EditorEvents:
-  - {fileID: -2122268488660143805}
-  - {fileID: -3055534461744789691}
-  - {fileID: -4986456812478800345}
-  - {fileID: 228992149978299308}
-  - {fileID: 2093290610850139855}
-  - {fileID: -791111509675405875}
-  - {fileID: 4266006477613828316}
-  - {fileID: 6918313831318612872}
-  - {fileID: -6625395106793548543}
-  - {fileID: -7996520032211667816}
-  - {fileID: -1991896257674214828}
-  - {fileID: 6018719215005315273}
-  - {fileID: -8397586847772547427}
-  - {fileID: 7998578387576160850}
-  - {fileID: 732539818321468544}
-  - {fileID: 6585889743185622529}
-  - {fileID: -8324157584950625284}
-  - {fileID: -2509167858295348961}
-  - {fileID: 8393197134709468310}
-  - {fileID: 2826775789884003044}
-  - {fileID: 6928668743414154871}
-  - {fileID: -6167405802145985915}
-  - {fileID: -7042903139015449335}
-  - {fileID: 5179843432607626787}
-  - {fileID: 6915733546685844460}
-  - {fileID: -2893916837815229863}
-  - {fileID: -5125145583160958147}
-  - {fileID: -4450107810085333420}
-  - {fileID: -5201533040143973689}
-  - {fileID: -7560888723938050555}
-  - {fileID: 398081864535398757}
+  - {fileID: -440634760526552158}
+  - {fileID: -7522903765579823019}
+  - {fileID: 5226092337765982764}
+  - {fileID: 8238478513840894523}
+  - {fileID: -472924656067940857}
+  - {fileID: -3545343582715008568}
+  - {fileID: -3584666366022119562}
+  - {fileID: 5585681390902688018}
+  - {fileID: -8597632626732669371}
+  - {fileID: 458900892504227909}
+  - {fileID: -7446166843349383266}
+  - {fileID: 4661199754842090755}
+  - {fileID: -7095104407643403268}
+  - {fileID: -5274952821032052360}
+  - {fileID: 2087229819381822827}
+  - {fileID: 1878543253132425628}
+  - {fileID: 4870573209503426281}
+  - {fileID: 6508025033867447682}
+  - {fileID: -5322480754393278285}
+  - {fileID: -1109323725199294612}
+  - {fileID: -8178817570018616354}
+  - {fileID: -2577515011890068664}
+  - {fileID: 4792455329942034306}
+  - {fileID: -6212101285827293893}
+  - {fileID: -8312892166466869025}
+  - {fileID: 2542096039615905260}
+  - {fileID: -7520221478308209094}
+  - {fileID: -6448193334798528325}
+  - {fileID: 4090088817647884871}
+  - {fileID: 2518919889630379349}
+  - {fileID: -6265727107154778219}
+  - {fileID: 2392845190295329503}
+  - {fileID: -2565488986324872867}
+  - {fileID: 5941139314381041697}
+  - {fileID: 135347729959268098}
+  - {fileID: -249410335994106254}
+  - {fileID: -5800794669047727403}
+  - {fileID: 519959182146846997}
+  - {fileID: -8629160116290288243}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -5410980213095377784}
+  - {fileID: 4806261860224790927}
   StringsBanks:
-  - {fileID: -3356258422299927035}
+  - {fileID: -3207011124976229285}
   cacheVersion: 131849
-  cacheTime: 639001819238487327
+  cacheTime: 639004527032143757
   SerializableEventsDict:
-  - key: snapshot:/Slow-Motion
+  - key: "event:/M\xFAsica/M\xFAsica Final Boss"
     index: 0
-  - key: snapshot:/Health Low
+  - key: "event:/M\xFAsica/Menu Music"
     index: 1
-  - key: snapshot:/Reverb/Sewer Reverb
+  - key: "event:/M\xFAsica/M\xFAsica de Victoria"
     index: 2
-  - key: snapshot:/Pause
+  - key: "event:/M\xFAsica/Gameplay Music"
     index: 3
-  - key: snapshot:/Reverb/Cave Reverb
+  - key: "event:/Sonidos Espec\xEDficos/Pasos"
     index: 4
-  - key: event:/Music/Level 03
+  - key: "event:/Bolas Tama\xF1os/Bola grande"
     index: 5
-  - key: event:/Music/Level 01
+  - key: event:/Tiros/Sonido para indicar que es el primer Tiro
     index: 6
-  - key: event:/Music/Radio Station
+  - key: "event:/Acciones del Juego 2/Sonido para indicar que el jugado perdi\xF3"
     index: 7
-  - key: event:/Music/Level 02
+  - key: event:/Acciones del Juego/Spare
     index: 8
-  - key: event:/Character/Player Footsteps
+  - key: event:/Pinos/Sonido de los pinos levantandose para el segundo tiro
     index: 9
-  - key: event:/Character/Door Open
+  - key: event:/Timers/Sonido de Timer
     index: 10
-  - key: event:/Weapons/Explosion
+  - key: event:/Tiros/Sonido para indicar que es el segundo Tiro
     index: 11
-  - key: event:/Character/Enemy Footsteps
+  - key: event:/Bolas Golpes/Choque
     index: 12
-  - key: event:/Interactables/Barrel Roll
+  - key: "event:/Bolas Tama\xF1os/Bola chica"
     index: 13
-  - key: event:/Character/Door Close
+  - key: event:/Acciones del Juego/Strike
     index: 14
-  - key: event:/Ambience/Country
+  - key: event:/Bolas Fuego/Sonido de explosion de bola de fuego
     index: 15
-  - key: event:/Ambience/City
+  - key: event:/Pinos/Pino Individual 1
     index: 16
-  - key: event:/Character/Radio Dialogue
+  - key: event:/Gritos Del Jefe/Grito del jefe pino 2
     index: 17
-  - key: event:/UI/Okay
+  - key: event:/Timers/Sonido de Timer acabando (pitido)
     index: 18
-  - key: event:/barrel_rolling_loop
+  - key: event:/Gritos Del Jefe/Grito del jefe al ser derrotado
     index: 19
-  - key: event:/Character/Dialogue
+  - key: "event:/Bolas Fuego/Sonido de bola de fuego movi\xE9ndose"
     index: 20
-  - key: event:/Weapons/Pistol
+  - key: event:/Bolas Fuego/Sonido de choque de la bola de fuego
     index: 21
-  - key: event:/Character/Health
+  - key: "event:/Bolas Fuego/Sonido de fuego cre\xE1ndose"
     index: 22
-  - key: event:/Interactables/Wooden Collision
+  - key: event:/Tiros/Sonido para indicar que es el tercer Tiro
     index: 23
-  - key: event:/Ambience/Forest
+  - key: event:/Bolas Golpes/Bola chocando con pinos
     index: 24
-  - key: event:/UI/Cancel
+  - key: event:/Gritos Del Jefe/Grito del jefe pino 1
     index: 25
-  - key: event:/Weapons/Machine Gun
+  - key: event:/Timers/Sonido de Timer Intenso
     index: 26
-  - key: event:/Vehicles/Car Engine
+  - key: event:/Pinos/Pinos Cayendo al suelo
     index: 27
-  - key: event:/Vehicles/Ride-on Mower
+  - key: event:/Gritos Del Jefe/Grito del jefe pino 3
     index: 28
-  - key: event:/VO/Main Menu
+  - key: event:/Acciones del Juego 2/Sonido para indicar que el juego se acabo
     index: 29
-  - key: event:/VO/Welcome
+  - key: "event:/Acciones del Juego 2/Sonido para indicar que el jugador gan\xF3"
     index: 30
+  - key: event:/Acciones del Juego 2/Sonido para indicar el cambio de ronda
+    index: 31
+  - key: event:/Tiros/Sonido de los pinos levantandose para el segundo tiro
+    index: 32
+  - key: event:/Pinos/Pino Individual 2
+    index: 33
+  - key: "event:/Sonidos Espec\xEDficos/Sonido corto para dar feedback que el jugador
+      selecciono un boton"
+    index: 34
+  - key: event:/Acciones del Juego 2/Sonido de Victoria Final
+    index: 35
+  - key: "event:/Bolas Golpes/Bola cay\xE9nose a la zanja"
+    index: 36
+  - key: "event:/Sonidos Espec\xEDficos/Sonido de golpe tipo manotazo a donde esta
+      el jugador"
+    index: 37
+  - key: "event:/Bolas Tama\xF1os/Bola mediana"
+    index: 38
+--- !u!114 &135347729959268098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Sonidos Espec\xEDficos/Sonido corto para dar feedback que el jugador
+    selecciono un boton"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Sonidos Espec\xEDficos/Sonido corto para dar feedback que el jugador
+    selecciono un boton"
+  Guid:
+    Data1: -1032945198
+    Data2: 1081999794
+    Data3: 392335793
+    Data4: 320441460
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 360
 --- !u!114 &228992149978299308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,6 +1699,82 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2182
+--- !u!114 &458900892504227909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pinos/Sonido de los pinos levantandose para el segundo tiro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Pinos/Sonido de los pinos levantandose para el segundo tiro
+  Guid:
+    Data1: -1619042256
+    Data2: 1169460385
+    Data3: -1953075539
+    Data4: 801598435
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4008
+--- !u!114 &519959182146846997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Sonidos Espec\xEDficos/Sonido de golpe tipo manotazo a donde esta
+    el jugador"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Sonidos Espec\xEDficos/Sonido de golpe tipo manotazo a donde esta
+    el jugador"
+  Guid:
+    Data1: -1886857235
+    Data2: 1205511940
+    Data3: 549639089
+    Data4: -2065470315
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 444
+--- !u!114 &700472977705679285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Todo.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Todo.bank
+  Name: Todo
+  StudioPath: bank:/Todo
+  lastModified: 639004527032143757
+  FileSizes:
+  - Name: Desktop
+    Value: 2445792
+  Exists: 1
 --- !u!114 &732539818321468544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,6 +1902,60 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1878543253132425628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Bolas Fuego/Sonido de explosion de bola de fuego
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Bolas Fuego/Sonido de explosion de bola de fuego
+  Guid:
+    Data1: 1559363184
+    Data2: 1159481719
+    Data3: -662908492
+    Data4: 1658609225
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2208
+--- !u!114 &2087229819381822827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Acciones del Juego/Strike
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Acciones del Juego/Strike
+  Guid:
+    Data1: 525516908
+    Data2: 1141731193
+    Data3: -577588293
+    Data4: 441893847
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4832
 --- !u!114 &2093290610850139855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1193,6 +2007,87 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &2392845190295329503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Acciones del Juego 2/Sonido para indicar el cambio de ronda
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Acciones del Juego 2/Sonido para indicar el cambio de ronda
+  Guid:
+    Data1: -266191939
+    Data2: 1280550525
+    Data3: -1445963382
+    Data4: -546339335
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2142
+--- !u!114 &2518919889630379349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Acciones del Juego 2/Sonido para indicar que el juego se acabo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Acciones del Juego 2/Sonido para indicar que el juego se acabo
+  Guid:
+    Data1: -2073494346
+    Data2: 1096915770
+    Data3: 1235430793
+    Data4: -189527156
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3813
+--- !u!114 &2542096039615905260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos Del Jefe/Grito del jefe pino 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Gritos Del Jefe/Grito del jefe pino 1
+  Guid:
+    Data1: -2121005907
+    Data2: 1295761903
+    Data3: -1359481923
+    Data4: 2076273328
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8097
 --- !u!114 &2826775789884003044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1220,6 +2115,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6516
+--- !u!114 &4090088817647884871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos Del Jefe/Grito del jefe pino 3
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Gritos Del Jefe/Grito del jefe pino 3
+  Guid:
+    Data1: -291652943
+    Data2: 1309436257
+    Data3: 2013202876
+    Data4: -1025097686
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1608
 --- !u!114 &4266006477613828316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1273,6 +2195,107 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &4661199754842090755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tiros/Sonido para indicar que es el segundo Tiro
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Tiros/Sonido para indicar que es el segundo Tiro
+  Guid:
+    Data1: -495067313
+    Data2: 1276900234
+    Data3: -1128040541
+    Data4: -1889873198
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 744
+--- !u!114 &4792455329942034306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Bolas Fuego/Sonido de fuego cre\xE1ndose"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Bolas Fuego/Sonido de fuego cre\xE1ndose"
+  Guid:
+    Data1: 1818573738
+    Data2: 1082759337
+    Data3: 2088351619
+    Data4: 421331266
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 15203
+--- !u!114 &4806261860224790927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639004527029914593
+  FileSizes:
+  - Name: Desktop
+    Value: 1036
+  Exists: 1
+--- !u!114 &4870573209503426281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pinos/Pino Individual 1
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Pinos/Pino Individual 1
+  Guid:
+    Data1: 661285753
+    Data2: 1166700046
+    Data3: 2137767576
+    Data4: -576317907
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 720
 --- !u!114 &4965833457358923034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +2368,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &5226092337765982764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/M\xFAsica de Victoria"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica/M\xFAsica de Victoria"
+  Guid:
+    Data1: -633817902
+    Data2: 1313816051
+    Data3: -1159851075
+    Data4: -1360834566
+  Banks:
+  - {fileID: -8026243769207849861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 164688
 --- !u!114 &5578337927676879039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1369,6 +2419,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5585681390902688018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Acciones del Juego 2/Sonido para indicar que el jugado perdi\xF3"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/Acciones del Juego 2/Sonido para indicar que el jugado perdi\xF3"
+  Guid:
+    Data1: 673980202
+    Data2: 1115044249
+    Data3: -2081849429
+    Data4: 1158967465
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2377
 --- !u!114 &5594316335084682814
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1393,6 +2470,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5941139314381041697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pinos/Pino Individual 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Pinos/Pino Individual 2
+  Guid:
+    Data1: 2126115520
+    Data2: 1323925709
+    Data3: 610564489
+    Data4: -1985571293
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 456
 --- !u!114 &6018719215005315273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,6 +2525,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 100
   Length: 0
+--- !u!114 &6508025033867447682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Gritos Del Jefe/Grito del jefe pino 2
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Gritos Del Jefe/Grito del jefe pino 2
+  Guid:
+    Data1: -1557724283
+    Data2: 1264474278
+    Data3: -927091805
+    Data4: 130282738
+  Banks:
+  - {fileID: 700472977705679285}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1872
 --- !u!114 &6572934728256903815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1631,6 +2762,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8238478513840894523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/M\xFAsica/Gameplay Music"
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: "event:/M\xFAsica/Gameplay Music"
+  Guid:
+    Data1: 1637605876
+    Data2: 1332597270
+    Data3: -1429945667
+    Data4: 543765128
+  Banks:
+  - {fileID: -8026243769207849861}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 131640
 --- !u!114 &8393197134709468310
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -307,8 +307,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../Carpetony/5to Semestre/Proyecto Semestral/Examples/Examples.fspro
-  sourceBankPath: ../Carpetony/5to Semestre/Proyecto Semestral/Examples/Build
+  sourceProjectPath: ../../../Downloads/Sonidos/Sonidos/Sonidos.fspro
+  sourceBankPath: ../../../Downloads/Sonidos/Sonidos/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -330,8 +330,11 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - "M\xFAsica"
+  - Todo
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
