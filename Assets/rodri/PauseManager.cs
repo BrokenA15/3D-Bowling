@@ -12,6 +12,9 @@ public class PauseManager : MonoBehaviour
     [Tooltip("Nombre de la escena de menú principal")]
     public string menuSceneName = "VR o NoVR";
 
+    [Header("UINormal")]
+    public GameObject gameplayUI;
+
     private bool isPaused = false;
 
     void Start()
@@ -40,6 +43,10 @@ public class PauseManager : MonoBehaviour
         if (pauseCanvas != null)
             pauseCanvas.SetActive(true);
 
+        if (gameplayUI != null)
+            gameplayUI.SetActive(false);
+
+
         Time.timeScale = 0f;
         isPaused = true;
 
@@ -51,6 +58,8 @@ public class PauseManager : MonoBehaviour
     {
         if (pauseCanvas != null)
             pauseCanvas.SetActive(false);
+        if (gameplayUI != null)
+            gameplayUI.SetActive(true);
 
         Time.timeScale = 1f;
         isPaused = false;
