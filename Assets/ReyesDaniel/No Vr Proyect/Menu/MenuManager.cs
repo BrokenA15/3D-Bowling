@@ -11,10 +11,11 @@ public class MenuManager : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = true;
         ShowMainMenu();
     }
 
-    // Mostrar menú principal con fade
+    // Mostrar menï¿½ principal con fade
     public void ShowMainMenu()
     {
         MainMenu.Show();
@@ -36,7 +37,7 @@ public class MenuManager : MonoBehaviour
         Creditos.Hide();
     }
 
-    // Mostrar créditos con fade
+    // Mostrar crï¿½ditos con fade
     public void ShowCredits()
     {
         MainMenu.Hide();

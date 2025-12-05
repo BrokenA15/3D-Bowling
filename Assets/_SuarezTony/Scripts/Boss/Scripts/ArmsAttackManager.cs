@@ -41,5 +41,10 @@ public class ArmsAttackManager : MonoBehaviour
         managerBoss.EndAttack();
 
     }
+
+    private void SfxActivate()
+    {
+        managerBoss.Golpe();
+    }
     
 }

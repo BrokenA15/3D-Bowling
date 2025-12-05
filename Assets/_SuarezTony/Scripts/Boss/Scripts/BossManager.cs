@@ -53,8 +53,8 @@ public class BossManager : MonoBehaviour
     
     [Header("Health")] 
     public int maxHealth = 150;
-    [SerializeField]
-    private int currentHealth;
+
+    public int currentHealth;
 
     [Header("Material")] 
     public MeshRenderer bossMeshRender;
@@ -64,15 +64,30 @@ public class BossManager : MonoBehaviour
     public Material bossAngry;
     
     
+    
     public Color maxHealthColor = new Color(254,255,200);
     public Color lowHealthColor = Color.red;
     
     private bool isFlashing = false;
     private Color currentLerpedColor;
     
+    [Header("SFX")] 
+    public GameObject sfxGrito1;
+    public GameObject sfxGrito2;
+    public GameObject sfxGrito3;
+    public GameObject sfxBolaFuego;
+    public GameObject sfxFuego;
+    public GameObject sfxGolpe;
+
 
     private void Start()
     {
+        sfxGolpe.SetActive(false);
+        sfxGrito1.SetActive(false);
+        sfxGrito2.SetActive(false);
+        sfxGrito3.SetActive(false);
+        sfxFuego.SetActive(false); 
+        sfxBolaFuego.SetActive(false);
        bossAnimator.SetBool(bossDead, false);
        fireCollider.enabled = false;
        canAttack = true;
@@ -90,6 +105,7 @@ public class BossManager : MonoBehaviour
     {
         currentHealth -= amount;
         Debug.Log("Boss recibió daño. Vida restante: " + currentHealth);
+        StartCoroutine(GritoGolpe());
 
         UpdateDamageColor();
 
@@ -98,10 +114,12 @@ public class BossManager : MonoBehaviour
         if (currentHealth <= 100)
         {
             SecondPhase();
+            sfxGrito2.SetActive(true);
         }
         if (currentHealth <= 50)
         {
             ThirdPhase();
+            sfxGrito3.SetActive(true);
         }
         if (currentHealth <= 0)
         {
@@ -117,6 +135,7 @@ public class BossManager : MonoBehaviour
        {
            if (!isAttacking)
            {
+               
                timer += Time.deltaTime;
                if (timer >= attackCooldown)
                {
@@ -166,6 +185,51 @@ public class BossManager : MonoBehaviour
 
        isFlashing = false;
    }
+
+   public void Golpe()
+   {
+       StartCoroutine(ActivateGolpe());
+
+   }
+   
+   public void ActivateFireball()
+   {
+       StartCoroutine(BolaFuego());
+   }
+
+   public void ActivateFire()
+   {
+       StartCoroutine(Fuego());
+   }
+
+   private IEnumerator GritoGolpe()
+   {
+       sfxGrito1.SetActive(true);
+       yield return new WaitForSeconds(3f);
+       sfxGrito1.SetActive(false);
+   }
+   
+    private IEnumerator ActivateGolpe()
+   {
+       sfxGolpe.SetActive(true);
+       yield return new WaitForSeconds(3f);
+       sfxGolpe.SetActive(false);
+   }
+
+   private IEnumerator BolaFuego()
+   {
+       sfxBolaFuego.SetActive(true);
+       yield return new WaitForSeconds(0.65f);
+       sfxBolaFuego.SetActive(false);
+   }
+   
+   private IEnumerator Fuego()
+   {
+       sfxFuego.SetActive(true);
+       yield return new WaitForSeconds(7.2f);
+       sfxFuego.SetActive(false);
+   }
+
    
    private void Die()
    {
@@ -391,7 +455,7 @@ public class BossManager : MonoBehaviour
     {
         yield return new WaitForSeconds(10f);
         winCanvas.SetActive(true);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(30f);
         SceneManager.LoadScene(menuPrincipal);
     }
 

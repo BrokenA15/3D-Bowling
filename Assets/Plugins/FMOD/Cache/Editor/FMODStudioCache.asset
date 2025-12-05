@@ -230,10 +230,10 @@ MonoBehaviour:
   Path: "../../../Downloads/Sonidos/Sonidos/Build/Desktop/M\xFAsica.bank"
   Name: "M\xFAsica"
   StudioPath: "bank:/M\xFAsica"
-  lastModified: 639004527031566747
+  lastModified: 639004966458531708
   FileSizes:
   - Name: Desktop
-    Value: 6576288
+    Value: 6576768
   Exists: 1
 --- !u!114 &-7996520032211667816
 MonoBehaviour:
@@ -312,7 +312,7 @@ MonoBehaviour:
   - {fileID: -8026243769207849861}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1115,10 +1115,10 @@ MonoBehaviour:
   Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639004527030171525
+  lastModified: 639004966423140477
   FileSizes:
   - Name: Desktop
-    Value: 3184
+    Value: 3196
   Exists: 1
 --- !u!114 &-3055534461744789691
 MonoBehaviour:
@@ -1439,7 +1439,7 @@ MonoBehaviour:
   - {fileID: -8026243769207849861}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -3207011124976229285}
   cacheVersion: 131849
-  cacheTime: 639004527032143757
+  cacheTime: 639004966472394090
   SerializableEventsDict:
   - key: "event:/M\xFAsica/M\xFAsica Final Boss"
     index: 0
@@ -1770,10 +1770,10 @@ MonoBehaviour:
   Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Todo.bank
   Name: Todo
   StudioPath: bank:/Todo
-  lastModified: 639004527032143757
+  lastModified: 639004966472394090
   FileSizes:
   - Name: Desktop
-    Value: 2445792
+    Value: 2446624
   Exists: 1
 --- !u!114 &732539818321468544
 MonoBehaviour:
@@ -2264,10 +2264,10 @@ MonoBehaviour:
   Path: ../../../Downloads/Sonidos/Sonidos/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639004527029914593
+  lastModified: 639004966423115362
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1074
   Exists: 1
 --- !u!114 &4870573209503426281
 MonoBehaviour:
@@ -2784,7 +2784,7 @@ MonoBehaviour:
   - {fileID: -8026243769207849861}
   IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
