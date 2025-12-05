@@ -70082,6 +70082,7 @@ MonoBehaviour:
   bossAngry: {fileID: 2100000, guid: 55e127b822d9c514180318b457953fb9, type: 2}
   maxHealthColor: {r: 1, g: 1, b: 1, a: 1}
   lowHealthColor: {r: 1, g: 0, b: 0, a: 1}
+  musicBoss: {fileID: 1759801329}
   sfxGrito1: {fileID: 991008038}
   sfxGrito2: {fileID: 1336469136}
   sfxGrito3: {fileID: 1559629205}

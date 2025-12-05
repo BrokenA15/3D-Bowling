@@ -70,8 +70,9 @@ public class BossManager : MonoBehaviour
     
     private bool isFlashing = false;
     private Color currentLerpedColor;
-    
+
     [Header("SFX")] 
+    public GameObject musicBoss;
     public GameObject sfxGrito1;
     public GameObject sfxGrito2;
     public GameObject sfxGrito3;
@@ -82,6 +83,7 @@ public class BossManager : MonoBehaviour
 
     private void Start()
     {
+        musicBoss.SetActive(true);
         sfxGolpe.SetActive(false);
         sfxGrito1.SetActive(false);
         sfxGrito2.SetActive(false);
@@ -456,6 +458,7 @@ public class BossManager : MonoBehaviour
         yield return new WaitForSeconds(10f);
         winCanvas.SetActive(true);
         yield return new WaitForSeconds(30f);
+        musicBoss.SetActive(false);
         SceneManager.LoadScene(menuPrincipal);
     }
 

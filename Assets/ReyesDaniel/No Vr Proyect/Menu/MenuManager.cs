@@ -8,10 +8,12 @@ public class MenuManager : MonoBehaviour
     public PanelFader MainMenu;
     public PanelFader Opciones;
     public PanelFader Creditos;
+    public GameObject musicaMenu;
 
     void Start()
     {
         Cursor.visible = true;
+        musicaMenu.SetActive(true);
         ShowMainMenu();
     }
 
@@ -27,6 +29,7 @@ public class MenuManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("NoVRDaniel");
+        musicaMenu.SetActive(false);
     }
 
     // Mostrar opciones con fade

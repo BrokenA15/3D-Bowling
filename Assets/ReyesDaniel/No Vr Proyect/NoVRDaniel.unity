@@ -2098,6 +2098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoadBossScene
   nameBossScene: Boss NoVR
+  musicaGame: {fileID: 839224679}
 --- !u!95 &318726264
 Animator:
   serializedVersion: 7
@@ -4550,7 +4551,7 @@ GameObject:
   - component: {fileID: 839224681}
   - component: {fileID: 839224680}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MUSICAAA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4577,8 +4578,8 @@ MonoBehaviour:
       Data4: 543765128
     Path: "event:/M\xFAsica/Gameplay Music"
   Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
+  EventPlayTrigger: 11
+  EventStopTrigger: 12
   AllowFadeout: 1
   TriggerOnce: 0
   Preload: 0
